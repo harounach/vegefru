@@ -10,8 +10,27 @@ import Checkbox from "../components/Checkbox/Checkbox";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 
+import {
+  isValidFullName,
+  isValidAddress,
+  isValidCity,
+  isValidPostalCode,
+  isValidCountry,
+} from "../utils/form";
+
 export default function Shipping() {
   const [fullName, setFullName] = useState("");
+  const [address, setAddress] = useState("");
+  const [city, setCity] = useState("");
+  const [postalCode, setPostalCode] = useState("");
+  const [country, setCountry] = useState("");
+  const [billingCheck, setBillingCheck] = useState(true);
+
+  const [fullNameError, setFullNameError] = useState("");
+  const [addressError, setAddressError] = useState("");
+  const [cityError, setCityError] = useState("");
+  const [postalCodeError, setPostalCodeError] = useState("");
+  const [countryError, setCountryError] = useState("");
 
   const userInfo = true;
   const router = useRouter();
@@ -22,11 +41,61 @@ export default function Shipping() {
     }
   }, [userInfo]);
 
-  const handleSubmit = (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
 
+    handleErrorMessages("", "", "", "", "");
+
+    const checkFullName = isValidFullName(fullName);
+    const checkAddress = isValidAddress(address);
+    const checkCity = isValidCity(city);
+    const checkPostalCode = isValidPostalCode(postalCode);
+    const checkCountry = isValidCountry(country);
+
+    handleErrorMessages(
+      checkFullName.errorMessage,
+      checkAddress.errorMessage,
+      checkCity.errorMessage,
+      checkPostalCode.errorMessage,
+      checkCountry.errorMessage
+    );
+
+    const validFields =
+      checkFullName.answer &&
+      checkAddress.answer &&
+      checkCity.answer &&
+      checkPostalCode.answer &&
+      checkCountry.answer;
+
+    if (validFields) {
+      router.push("/billing");
+    }
+
+    console.log(`validFields: ${checkCountry.answer}`);
+
     console.log("Shipping address submitted");
-    router.push("/billing");
+  };
+
+  /**
+   * Handle error messages
+   * @param {string} fullNameMsg
+   * @param {string} addressMsg
+   * @param {string} cityMsg
+   * @param {string} postalCodeMsg
+   * @param {string} countryMsg
+   */
+  const handleErrorMessages = (
+    fullNameMsg,
+    addressMsg,
+    cityMsg,
+    postalCodeMsg,
+    countryMsg
+  ) => {
+    setFullNameError(fullNameMsg);
+    setAddressError(addressMsg);
+    setCityError(cityMsg);
+    setPostalCodeError(postalCodeMsg);
+    setCountryError(countryMsg);
   };
 
   return (
@@ -60,6 +129,9 @@ export default function Shipping() {
                 id="full_name"
                 name="full_name"
                 label="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                errorMessage={fullNameError}
               />
             </div>
             <div className="form__section">
@@ -69,11 +141,22 @@ export default function Shipping() {
                 id="address"
                 name="address"
                 label="Address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                errorMessage={addressError}
               />
             </div>
             <div className="form__section">
               {/* City */}
-              <FormField type="text" id="city" name="city" label="City" />
+              <FormField
+                type="text"
+                id="city"
+                name="city"
+                label="City"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                errorMessage={cityError}
+              />
             </div>
             <div className="form__section">
               {/* Postal Code */}
@@ -82,6 +165,9 @@ export default function Shipping() {
                 id="postal_code"
                 name="postal_code"
                 label="Postal Code"
+                value={postalCode}
+                onChange={(e) => setPostalCode(e.target.value)}
+                errorMessage={postalCodeError}
               />
             </div>
             <div className="form__section">
@@ -91,14 +177,18 @@ export default function Shipping() {
                 id="country"
                 name="country"
                 label="Country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                errorMessage={countryError}
               />
             </div>
             <div className="form__section">
               <Checkbox
                 id="billing_checkbox"
                 name="billing_checkbox"
-                checked={true}
+                checked={billingCheck}
                 label="My Billing address is the same as my Shipping address"
+                onCheck={(evt) => setBillingCheck(!billingCheck)}
               />
             </div>
             <div className="form__section">

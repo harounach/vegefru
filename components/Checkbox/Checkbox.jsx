@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import styles from "./Checkbox.module.scss";
 
-const Checkbox = ({ customClasses, id, name, label, checked }) => {
+const Checkbox = ({ customClasses, id, name, label, checked, onCheck }) => {
   return (
     <div className={classNames(styles.checkbox, customClasses)}>
       <input
@@ -10,6 +10,8 @@ const Checkbox = ({ customClasses, id, name, label, checked }) => {
         type="checkbox"
         className={classNames(styles.checkbox__input)}
         name={name}
+        checked={checked}
+        onChange={(evt) => onCheck(evt)}
       />
       <label htmlFor={id} className={classNames(styles.checkbox__label)}>
         {label}
