@@ -1,0 +1,24 @@
+// shipping
+.shipping {
+  width: 100%;
+  // shipping__header
+  &__header {
+    margin-top: 1rem;
+    margin-bottom: 40px;
+  }
+
+  // shipping__stepper
+  &__stepper {
+    margin-bottom: 2rem;
+  }
+
+  // shipping__form
+  &__form {
+    max-width: 488px;
+    margin: 0 auto 2rem;
+  }
+
+  // shipping__footer
+  &__footer {
+  }
+}

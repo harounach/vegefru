@@ -1,0 +1,10 @@
+// rating
+.rating {
+  display: flex;
+  gap: 0.125rem;
+  // rating__star
+  &__star {
+    color: #f0c860;
+    font-size: 18px;
+  }
+}

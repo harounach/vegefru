@@ -1,0 +1,42 @@
+// placeOrder
+.placeOrder {
+  width: 100%;
+  // placeOrder__header
+  &__header {
+    margin-top: 1rem;
+    margin-bottom: 40px;
+  }
+
+  // placeOrder__stepper
+  &__stepper {
+    margin-bottom: 2rem;
+  }
+
+  // placeOrder__main
+  &__main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // placeOrder__info
+  &__info {
+    width: 52%;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  // placeOrder__info-sect
+  &__info-sect {
+  }
+
+  // placeOrder__sumary
+  &__sumary {
+    width: 40%;
+  }
+
+  // placeOrder__footer
+  &__footer {
+  }
+}

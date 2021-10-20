@@ -1,0 +1,28 @@
+// favorite
+.favorite {
+  width: 100%;
+  // favorite__header
+  &__header {
+    margin-top: 1rem;
+    margin-bottom: 40px;
+  }
+
+  // favorite__main
+  &__main {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  // favorite__grid
+  &__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  // favorite__footer
+  &__footer {
+  }
+}

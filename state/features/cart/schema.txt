@@ -1,0 +1,48 @@
+{
+  todos: {
+    ids: [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    entities: {
+      '0': {
+        color: '',
+        completed: false,
+        text: 'Buy bread',
+        id: 0
+      },
+      '1': {
+        color: '',
+        completed: false,
+        text: 'Read email',
+        id: 1
+      },
+      '2': {
+        color: '',
+        completed: false,
+        text: 'Clean bedroom',
+        id: 2
+      },
+      '3': {
+        color: '',
+        completed: false,
+        text: 'Read book',
+        id: 3
+      },
+      '4': {
+        color: '',
+        completed: false,
+        text: 'Clean car',
+        id: 4
+      }
+    },
+    status: 'idle'
+  },
+  filters: {
+    status: 'all',
+    colors: []
+  }
+}

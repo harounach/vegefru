@@ -1,0 +1,16 @@
+// logo
+.logo {
+  display: flex;
+  align-items: center;
+  // logo__img
+  &__img {
+    margin-right: 1rem;
+    width: 56px;
+  }
+
+  // logo__name
+  &__name {
+    display: none;
+    font-size: 1.125rem;
+  }
+}

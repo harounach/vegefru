@@ -1,0 +1,19 @@
+// profile
+.profile {
+  width: 100%;
+  // profile__header
+  &__header {
+    margin-top: 1rem;
+    margin-bottom: 40px;
+  }
+
+  // profile__form
+  &__form {
+    max-width: 488px;
+    margin: 0 auto 2rem;
+  }
+
+  // profile__footer
+  &__footer {
+  }
+}

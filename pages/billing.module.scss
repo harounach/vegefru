@@ -1,0 +1,24 @@
+// billing
+.billing {
+  width: 100%;
+  // billing__header
+  &__header {
+    margin-top: 1rem;
+    margin-bottom: 40px;
+  }
+
+  // billing__stepper
+  &__stepper {
+    margin-bottom: 2rem;
+  }
+
+  // billing__form
+  &__form {
+    max-width: 488px;
+    margin: 0 auto 2rem;
+  }
+
+  // billing__footer
+  &__footer {
+  }
+}
