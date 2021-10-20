@@ -13,7 +13,7 @@ import Footer from "../components/Footer/Footer";
 export default function Shipping() {
   const [fullName, setFullName] = useState("");
 
-  console.log("test");
+  console.log("test print");
 
   const userInfo = true;
   const router = useRouter();
