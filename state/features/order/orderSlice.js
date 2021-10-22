@@ -7,6 +7,7 @@ const initialState = {
     city: "",
     postalCode: "",
     country: "",
+    fillBilling: false,
   },
   billing: {
     fullName: "",

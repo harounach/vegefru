@@ -13,6 +13,7 @@ describe("orderSlice", () => {
         city: "",
         postalCode: "",
         country: "",
+        fillBilling: false,
       },
     };
 
@@ -22,6 +23,7 @@ describe("orderSlice", () => {
       city: "Algiers",
       postalCode: "12000",
       country: "United States",
+      fillBilling: true,
     };
 
     const newState = orderReducer(initialState, addShipping(shippingInfo));
@@ -31,6 +33,7 @@ describe("orderSlice", () => {
     expect(newState.shipping.city).toBe(shippingInfo.city);
     expect(newState.shipping.postalCode).toBe(shippingInfo.postalCode);
     expect(newState.shipping.country).toBe(shippingInfo.country);
+    expect(newState.shipping.fillBilling).toBe(shippingInfo.fillBilling);
   });
 
   test("should add billing info", () => {

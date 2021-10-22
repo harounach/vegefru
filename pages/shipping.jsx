@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
 import classNames from "classnames";
 import styles from "./shipping.module.scss";
@@ -10,6 +11,8 @@ import Checkbox from "../components/Checkbox/Checkbox";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 
+import { addShipping, addBilling } from "../state/features/order/orderSlice";
+
 import {
   isValidFullName,
   isValidAddress,
@@ -19,12 +22,18 @@ import {
 } from "../utils/form";
 
 export default function Shipping() {
-  const [fullName, setFullName] = useState("");
-  const [address, setAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [postalCode, setPostalCode] = useState("");
-  const [country, setCountry] = useState("");
-  const [billingCheck, setBillingCheck] = useState(true);
+  const shippingInfo = useSelector((state) => state.order.shipping);
+  const dispatch = useDispatch();
+
+  console.log(shippingInfo);
+  console.log(shippingInfo.fillBilling);
+
+  const [fullName, setFullName] = useState(shippingInfo.fullName);
+  const [address, setAddress] = useState(shippingInfo.address);
+  const [city, setCity] = useState(shippingInfo.city);
+  const [postalCode, setPostalCode] = useState(shippingInfo.postalCode);
+  const [country, setCountry] = useState(shippingInfo.country);
+  const [billingCheck, setBillingCheck] = useState(shippingInfo.fillBilling);
 
   const [fullNameError, setFullNameError] = useState("");
   const [addressError, setAddressError] = useState("");
@@ -39,7 +48,7 @@ export default function Shipping() {
     if (!userInfo) {
       router.push("/login");
     }
-  }, [userInfo]);
+  }, [userInfo, router]);
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -68,6 +77,29 @@ export default function Shipping() {
       checkCountry.answer;
 
     if (validFields) {
+      dispatch(
+        addShipping({
+          fullName,
+          address,
+          city,
+          postalCode,
+          country,
+          billingCheck,
+        })
+      );
+
+      // Billing is the same as shipping
+      if (billingCheck) {
+        dispatch(
+          addBilling({
+            fullName,
+            address,
+            city,
+            postalCode,
+            country,
+          })
+        );
+      }
       router.push("/billing");
     }
 
@@ -188,7 +220,9 @@ export default function Shipping() {
                 name="billing_checkbox"
                 checked={billingCheck}
                 label="My Billing address is the same as my Shipping address"
-                onCheck={(evt) => setBillingCheck(!billingCheck)}
+                onCheck={(evt) => {
+                  setBillingCheck(!billingCheck);
+                }}
               />
             </div>
             <div className="form__section">

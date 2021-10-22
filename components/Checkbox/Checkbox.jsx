@@ -10,7 +10,7 @@ const Checkbox = ({ customClasses, id, name, label, checked, onCheck }) => {
         type="checkbox"
         className={classNames(styles.checkbox__input)}
         name={name}
-        checked={checked}
+        value={checked}
         onChange={(evt) => onCheck(evt)}
       />
       <label htmlFor={id} className={classNames(styles.checkbox__label)}>
