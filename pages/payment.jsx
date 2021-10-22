@@ -1,4 +1,6 @@
 import React from "react";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
 import classNames from "classnames";
 import styles from "./payment.module.scss";
@@ -8,7 +10,23 @@ import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 import Radio from "../components/Radio/Radio";
 
+import { addPaymentMethod } from "../state/features/order/orderSlice";
+
 export default function Payment() {
+  const paymentMethod = useSelector((state) => state.order.paymentMethod);
+  const dispatch = useDispatch();
+
+  const router = useRouter();
+
+  // TODO: use router effect to check billing info
+
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    dispatch(addPaymentMethod(paymentMethod));
+    router.push("/placeOrder");
+  };
+
   return (
     <div className={classNames(styles.payment)}>
       <Head>
@@ -28,7 +46,10 @@ export default function Payment() {
           customClasses={classNames(styles.payment__stepper)}
         />
         <main className="payment__main">
-          <form className={classNames(styles.payment__form, "form")}>
+          <form
+            className={classNames(styles.payment__form, "form")}
+            onSubmit={handleSubmit}
+          >
             <div className="form__section">
               <h1 className="form__title">Payment Method</h1>
             </div>
@@ -40,6 +61,7 @@ export default function Payment() {
                 name="payment_method"
                 label="PayPal"
                 value="paypal"
+                disabled={true}
               />
             </div>
             <div className="form__section">
@@ -51,7 +73,7 @@ export default function Payment() {
               />
             </div>
             <div className="form__section">
-              <Button url="/placeOrder" primary link customClasses="form__btn">
+              <Button primary customClasses="form__btn">
                 Continue
               </Button>
             </div>

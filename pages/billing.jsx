@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/router";
 import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
@@ -65,8 +65,6 @@ export default function Billing() {
       checkCity.answer &&
       checkPostalCode.answer &&
       checkCountry.answer;
-
-    console.log(validFields);
 
     if (validFields) {
       dispatch(

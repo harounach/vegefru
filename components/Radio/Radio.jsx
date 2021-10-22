@@ -2,7 +2,15 @@ import React from "react";
 import classNames from "classnames";
 import styles from "./Radio.module.scss";
 
-const Radio = ({ customClasses, id, name, label, checked, value }) => {
+const Radio = ({
+  customClasses,
+  id,
+  name,
+  label,
+  checked,
+  value,
+  disabled,
+}) => {
   return (
     <div className={classNames(styles.radio, customClasses)}>
       <input
@@ -11,6 +19,7 @@ const Radio = ({ customClasses, id, name, label, checked, value }) => {
         className={classNames(styles.radio__input)}
         name={name}
         value={value}
+        disabled={disabled}
       />
       <label htmlFor={id} className={classNames(styles.radio__label)}>
         {label}
