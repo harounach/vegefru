@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import { useDispatch, useSelector } from "react-redux";
 import Head from "next/head";
 import classNames from "classnames";
 import styles from "./billing.module.scss";
@@ -8,7 +10,100 @@ import FormField from "../components/FormField/FormField";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 
+import { addBilling } from "../state/features/order/orderSlice";
+
+import {
+  isValidFullName,
+  isValidAddress,
+  isValidCity,
+  isValidPostalCode,
+  isValidCountry,
+} from "../utils/form";
+
 export default function Billing() {
+  const billingInfo = useSelector((state) => state.order.billing);
+  const dispatch = useDispatch();
+
+  const [fullName, setFullName] = useState(billingInfo.fullName);
+  const [address, setAddress] = useState(billingInfo.address);
+  const [city, setCity] = useState(billingInfo.city);
+  const [postalCode, setPostalCode] = useState(billingInfo.postalCode);
+  const [country, setCountry] = useState(billingInfo.country);
+
+  const [fullNameError, setFullNameError] = useState("");
+  const [addressError, setAddressError] = useState("");
+  const [cityError, setCityError] = useState("");
+  const [postalCodeError, setPostalCodeError] = useState("");
+  const [countryError, setCountryError] = useState("");
+
+  const router = useRouter();
+
+  // TODO: use router effect to check shipping info
+
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    handleErrorMessages("", "", "", "", "");
+
+    const checkFullName = isValidFullName(fullName);
+    const checkAddress = isValidAddress(address);
+    const checkCity = isValidCity(city);
+    const checkPostalCode = isValidPostalCode(postalCode);
+    const checkCountry = isValidCountry(country);
+
+    handleErrorMessages(
+      checkFullName.errorMessage,
+      checkAddress.errorMessage,
+      checkCity.errorMessage,
+      checkPostalCode.errorMessage,
+      checkCountry.errorMessage
+    );
+
+    const validFields =
+      checkFullName.answer &&
+      checkAddress.answer &&
+      checkCity.answer &&
+      checkPostalCode.answer &&
+      checkCountry.answer;
+
+    console.log(validFields);
+
+    if (validFields) {
+      dispatch(
+        addBilling({
+          fullName,
+          address,
+          city,
+          postalCode,
+          country,
+        })
+      );
+      router.push("/payment");
+    }
+  };
+
+  /**
+   * Handle error messages
+   * @param {string} fullNameMsg
+   * @param {string} addressMsg
+   * @param {string} cityMsg
+   * @param {string} postalCodeMsg
+   * @param {string} countryMsg
+   */
+  const handleErrorMessages = (
+    fullNameMsg,
+    addressMsg,
+    cityMsg,
+    postalCodeMsg,
+    countryMsg
+  ) => {
+    setFullNameError(fullNameMsg);
+    setAddressError(addressMsg);
+    setCityError(cityMsg);
+    setPostalCodeError(postalCodeMsg);
+    setCountryError(countryMsg);
+  };
+
   return (
     <div className={classNames(styles.billing)}>
       <Head>
@@ -27,7 +122,10 @@ export default function Billing() {
           customClasses={classNames(styles.billing__stepper)}
         />
         <main className="billing__main">
-          <form className={classNames(styles.billing__form, "form")}>
+          <form
+            className={classNames(styles.billing__form, "form")}
+            onSubmit={handleSubmit}
+          >
             <div className="form__section">
               <h1 className="form__title">Billing Address</h1>
             </div>
@@ -38,6 +136,9 @@ export default function Billing() {
                 id="full_name"
                 name="full_name"
                 label="Full Name"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                errorMessage={fullNameError}
               />
             </div>
             <div className="form__section">
@@ -47,11 +148,22 @@ export default function Billing() {
                 id="address"
                 name="address"
                 label="Address"
+                value={address}
+                onChange={(e) => setAddress(e.target.value)}
+                errorMessage={addressError}
               />
             </div>
             <div className="form__section">
               {/* City */}
-              <FormField type="text" id="city" name="city" label="City" />
+              <FormField
+                type="text"
+                id="city"
+                name="city"
+                label="City"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
+                errorMessage={cityError}
+              />
             </div>
             <div className="form__section">
               {/* Postal Code */}
@@ -60,6 +172,9 @@ export default function Billing() {
                 id="postal_code"
                 name="postal_code"
                 label="Postal Code"
+                value={postalCode}
+                onChange={(e) => setPostalCode(e.target.value)}
+                errorMessage={postalCodeError}
               />
             </div>
             <div className="form__section">
@@ -69,10 +184,13 @@ export default function Billing() {
                 id="country"
                 name="country"
                 label="Country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
+                errorMessage={countryError}
               />
             </div>
             <div className="form__section">
-              <Button url="/payment" primary link customClasses="form__btn">
+              <Button primary customClasses="form__btn">
                 Continue
               </Button>
             </div>

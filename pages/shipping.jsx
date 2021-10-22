@@ -25,9 +25,6 @@ export default function Shipping() {
   const shippingInfo = useSelector((state) => state.order.shipping);
   const dispatch = useDispatch();
 
-  console.log(shippingInfo);
-  console.log(shippingInfo.fillBilling);
-
   const [fullName, setFullName] = useState(shippingInfo.fullName);
   const [address, setAddress] = useState(shippingInfo.address);
   const [city, setCity] = useState(shippingInfo.city);
@@ -102,10 +99,6 @@ export default function Shipping() {
       }
       router.push("/billing");
     }
-
-    console.log(`validFields: ${checkCountry.answer}`);
-
-    console.log("Shipping address submitted");
   };
 
   /**
