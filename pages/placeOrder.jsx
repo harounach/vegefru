@@ -6,6 +6,7 @@ import Appbar from "../components/Appbar/Appbar";
 import Stepper from "../components/Stepper/Stepper";
 import SummaryCard from "../components/SummaryCard/SummaryCard";
 import PlaceOrderCard from "../components/PlaceOrderCard/PlaceOrderCard";
+import PlaceOrderShippingCard from "../components/PlaceOrderCard/PlaceOrderShippingCard";
 import Footer from "../components/Footer/Footer";
 import {
   shippingInfo,
@@ -37,7 +38,7 @@ export default function PlaceOrder() {
         <main className={classNames(styles.placeOrder__main, "section")}>
           <section className={classNames(styles.placeOrder__info)}>
             <div className={classNames(styles["placeOrder__info-sect"])}>
-              <PlaceOrderCard shipping info={shippingInfo} />
+              <PlaceOrderShippingCard />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
               <PlaceOrderCard billing info={billingInfo} />
