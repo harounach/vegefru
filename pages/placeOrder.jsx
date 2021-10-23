@@ -6,7 +6,6 @@ import styles from "./placeOrder.module.scss";
 import Appbar from "../components/Appbar/Appbar";
 import Stepper from "../components/Stepper/Stepper";
 import SummaryCard from "../components/SummaryCard/SummaryCard";
-import PlaceOrderCard from "../components/PlaceOrderCard/PlaceOrderCard";
 import PlaceOrderShippingCard from "../components/PlaceOrderCard/PlaceOrderShippingCard";
 import PlaceOrderBillingCard from "../components/PlaceOrderCard/PlaceOrderBillingCard";
 import PlaceOrderPaymentCard from "../components/PlaceOrderCard/PlaceOrderPaymentCard";
