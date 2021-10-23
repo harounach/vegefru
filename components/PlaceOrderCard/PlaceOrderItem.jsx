@@ -1,10 +1,13 @@
 import React from "react";
+import Image from "next/image";
 import classNames from "classnames";
 import styles from "./PlaceOrderItem.module.scss";
 const PlaceOrderItem = ({ product, customClasses }) => {
   return (
     <div className={classNames(styles["place-order-item"], customClasses)}>
-      <img
+      <Image
+        width={90}
+        height={90}
         src={`/${product.image}.jpg`}
         alt={product.name}
         className={classNames(styles["place-order-item__img"])}
