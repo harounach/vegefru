@@ -7,6 +7,8 @@ import Stepper from "../components/Stepper/Stepper";
 import SummaryCard from "../components/SummaryCard/SummaryCard";
 import PlaceOrderCard from "../components/PlaceOrderCard/PlaceOrderCard";
 import PlaceOrderShippingCard from "../components/PlaceOrderCard/PlaceOrderShippingCard";
+import PlaceOrderBillingCard from "../components/PlaceOrderCard/PlaceOrderBillingCard";
+import PlaceOrderPaymentCard from "../components/PlaceOrderCard/PlaceOrderPaymentCard";
 import Footer from "../components/Footer/Footer";
 import {
   shippingInfo,
@@ -41,10 +43,10 @@ export default function PlaceOrder() {
               <PlaceOrderShippingCard />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
-              <PlaceOrderCard billing info={billingInfo} />
+              <PlaceOrderBillingCard />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
-              <PlaceOrderCard payment info={paymentInfo} />
+              <PlaceOrderPaymentCard />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
               <PlaceOrderCard items info={shippingInfo} />
