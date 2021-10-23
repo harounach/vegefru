@@ -1,11 +1,19 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import classNames from "classnames";
 import styles from "./SummaryCard.module.scss";
 import Button from "../Button/Button";
+import { resetOrder } from "../../state/features/order/orderSlice";
 
 const PlaceOrderSummary = ({ order, customClasses }) => {
+  const dispatch = useDispatch();
+  const router = useRouter();
+
   const handleOrder = () => {
     alert("Items bought successfully");
+    dispatch(resetOrder());
+    router.push("/");
   };
 
   return (
