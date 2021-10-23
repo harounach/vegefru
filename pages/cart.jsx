@@ -5,7 +5,7 @@ import { selectCartProductsIds } from "../state/features/cart/cartSlice";
 import classNames from "classnames";
 import styles from "./cart.module.scss";
 import Appbar from "../components/Appbar/Appbar";
-import SummaryCard from "../components/SummaryCard/SummaryCard";
+import CartSummary from "../components/SummaryCard/CartSummary";
 import CartProductCard from "../components/CartProductCard/CartProductCard";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
 import Footer from "../components/Footer/Footer";
@@ -38,7 +38,7 @@ export default function Cart(props) {
             </div>
           </section>
           <section className={classNames(styles.cart__sumary)}>
-            <SummaryCard
+            <CartSummary
               order={{
                 title: "Order Summary",
                 itemsNum: 2,

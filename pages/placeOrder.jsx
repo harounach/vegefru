@@ -5,7 +5,7 @@ import classNames from "classnames";
 import styles from "./placeOrder.module.scss";
 import Appbar from "../components/Appbar/Appbar";
 import Stepper from "../components/Stepper/Stepper";
-import SummaryCard from "../components/SummaryCard/SummaryCard";
+import PlaceOrderSummary from "../components/SummaryCard/PlaceOrderSummary";
 import PlaceOrderShippingCard from "../components/PlaceOrderCard/PlaceOrderShippingCard";
 import PlaceOrderBillingCard from "../components/PlaceOrderCard/PlaceOrderBillingCard";
 import PlaceOrderPaymentCard from "../components/PlaceOrderCard/PlaceOrderPaymentCard";
@@ -53,7 +53,7 @@ export default function PlaceOrder() {
             </div>
           </section>
           <section className={classNames(styles.placeOrder__sumary)}>
-            <SummaryCard
+            <PlaceOrderSummary
               order={{
                 title: "Order Summary",
                 itemsNum: 2,
