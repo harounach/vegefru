@@ -3,9 +3,7 @@ import classNames from "classnames";
 import styles from "./PlaceOrderCard.module.scss";
 import Button from "../Button/Button";
 
-const PlaceOrderPaymentCard = () => {
-  const paymentMethod = "Credit Card";
-
+const PlaceOrderPaymentCard = ({ paymentMethod }) => {
   return (
     <div className={classNames(styles["place-order-card"])}>
       {/* Title row */}

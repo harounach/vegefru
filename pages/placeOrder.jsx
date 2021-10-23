@@ -1,4 +1,5 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import Head from "next/head";
 import classNames from "classnames";
 import styles from "./placeOrder.module.scss";
@@ -10,14 +11,13 @@ import PlaceOrderShippingCard from "../components/PlaceOrderCard/PlaceOrderShipp
 import PlaceOrderBillingCard from "../components/PlaceOrderCard/PlaceOrderBillingCard";
 import PlaceOrderPaymentCard from "../components/PlaceOrderCard/PlaceOrderPaymentCard";
 import Footer from "../components/Footer/Footer";
-import {
-  shippingInfo,
-  billingInfo,
-  paymentInfo,
-  itemsInfo,
-} from "../data/data";
+import { shippingInfo } from "../data/data";
 
 export default function PlaceOrder() {
+  const { shipping, billing, paymentMethod } = useSelector(
+    (state) => state.order
+  );
+
   return (
     <div className={classNames(styles.placeOrder)}>
       <Head>
@@ -40,13 +40,13 @@ export default function PlaceOrder() {
         <main className={classNames(styles.placeOrder__main, "section")}>
           <section className={classNames(styles.placeOrder__info)}>
             <div className={classNames(styles["placeOrder__info-sect"])}>
-              <PlaceOrderShippingCard />
+              <PlaceOrderShippingCard shippingInfo={shipping} />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
-              <PlaceOrderBillingCard />
+              <PlaceOrderBillingCard billingInfo={billing} />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
-              <PlaceOrderPaymentCard />
+              <PlaceOrderPaymentCard paymentMethod={paymentMethod} />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
               <PlaceOrderCard items info={shippingInfo} />

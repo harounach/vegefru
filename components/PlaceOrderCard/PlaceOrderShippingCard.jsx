@@ -3,15 +3,7 @@ import classNames from "classnames";
 import styles from "./PlaceOrderCard.module.scss";
 import Button from "../Button/Button";
 
-const PlaceOrderShippingCard = () => {
-  const shippingInfo = {
-    fullName: "John Doe",
-    address: "Address 2021",
-    city: "Algiers",
-    postalCode: "12000",
-    country: "United States",
-  };
-
+const PlaceOrderShippingCard = ({ shippingInfo }) => {
   const address = `${shippingInfo.address}, ${shippingInfo.city}, ${shippingInfo.postalCode}, ${shippingInfo.country}`;
 
   return (
