@@ -5,6 +5,7 @@ import classNames from "classnames";
 import styles from "./SummaryCard.module.scss";
 import Button from "../Button/Button";
 import { resetOrder } from "../../state/features/order/orderSlice";
+import { resetCart } from "../../state/features/cart/cartSlice";
 
 const PlaceOrderSummary = ({ order, customClasses }) => {
   const dispatch = useDispatch();
@@ -13,6 +14,7 @@ const PlaceOrderSummary = ({ order, customClasses }) => {
   const handleOrder = () => {
     alert("Items bought successfully");
     dispatch(resetOrder());
+    dispatch(resetCart());
     router.push("/");
   };
 
