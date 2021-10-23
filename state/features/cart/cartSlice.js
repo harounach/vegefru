@@ -15,11 +15,12 @@ const cartSlice = createSlice({
   reducers: {
     cartAdded: cartAdapter.addOne,
     cartDeleted: cartAdapter.removeOne,
+    resetCart: cartAdapter.removeAll,
   },
 });
 
 // action creators
-export const { cartAdded, cartDeleted } = cartSlice.actions;
+export const { cartAdded, cartDeleted, resetCart } = cartSlice.actions;
 
 // selectors
 export const { selectAll: selectCartProducts, selectById: selectCartById } =
