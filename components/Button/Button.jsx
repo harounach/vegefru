@@ -3,21 +3,19 @@ import Link from "next/link";
 import classNames from "classnames";
 import styles from "./Button.module.scss";
 
-const Button = (props) => {
-  const {
-    primary,
-    secondary,
-    outline,
-    icon,
-    iconType,
-    badge,
-    link,
-    url,
-    children,
-    customClasses,
-    clickHandler,
-  } = props;
-
+const Button = ({
+  primary,
+  secondary,
+  outline,
+  icon,
+  iconType,
+  badge,
+  link,
+  url,
+  children,
+  customClasses,
+  clickHandler,
+}) => {
   const classes = classNames(styles.btn, customClasses, {
     [styles["btn--primary"]]: primary,
     [styles["btn--secondary"]]: secondary,

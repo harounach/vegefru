@@ -40,7 +40,12 @@ const CartSummary = ({ order, customClasses }) => {
         <span className={classNames(styles["summary-card__bold"])}>$9.00</span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
-        <Button primary customClasses={styles["summary-card__btn"]}>
+        <Button
+          link
+          url="/shipping"
+          primary
+          customClasses={styles["summary-card__btn"]}
+        >
           Place Order
         </Button>
       </div>

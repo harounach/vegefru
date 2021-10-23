@@ -4,6 +4,10 @@ import styles from "./SummaryCard.module.scss";
 import Button from "../Button/Button";
 
 const PlaceOrderSummary = ({ order, customClasses }) => {
+  const handleOrder = () => {
+    alert("Items bought successfully");
+  };
+
   return (
     <div className={classNames(styles["summary-card"], customClasses)}>
       <div className={classNames(styles["summary-card__section"])}>
@@ -40,7 +44,11 @@ const PlaceOrderSummary = ({ order, customClasses }) => {
         <span className={classNames(styles["summary-card__bold"])}>$9.00</span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
-        <Button primary customClasses={styles["summary-card__btn"]}>
+        <Button
+          primary
+          customClasses={styles["summary-card__btn"]}
+          clickHandler={handleOrder}
+        >
           Place Order
         </Button>
       </div>
