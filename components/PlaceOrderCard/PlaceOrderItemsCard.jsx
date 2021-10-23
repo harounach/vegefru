@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import classNames from "classnames";
 import styles from "./PlaceOrderCard.module.scss";
 import Button from "../Button/Button";
@@ -6,17 +6,17 @@ import Button from "../Button/Button";
 const PlaceOrderItemsCard = ({ itemsInfo }) => {
   const dataView = itemsInfo.map((product) => {
     return (
-      <>
-        {/* Name row */}
-        <div className={classNames(styles["place-order-card__sect"])}>
-          <span className={classNames(styles["place-order-card__subtitle"])}>
-            {product.name}
-          </span>
-          <span className={classNames(styles["place-order-card__info"])}>
-            {product.price}
-          </span>
-        </div>
-      </>
+      <div
+        key={product.id}
+        className={classNames(styles["place-order-card__sect"])}
+      >
+        <span className={classNames(styles["place-order-card__subtitle"])}>
+          {product.name}
+        </span>
+        <span className={classNames(styles["place-order-card__info"])}>
+          {product.price}
+        </span>
+      </div>
     );
   });
 
