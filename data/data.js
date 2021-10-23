@@ -112,55 +112,6 @@ export const productsData = [
   },
 ];
 
-export const shippingInfo = {
-  title: "Shipping",
-  type: "text",
-  editUrl: "/shipping",
-  details: [
-    {
-      id: "1",
-      subtitle: "Name",
-      info: "John Doe",
-    },
-    {
-      id: "2",
-      subtitle: "Address",
-      info: "Algiers, Algiers, 18045, Algieria",
-    },
-  ],
-};
-
-export const billingInfo = {
-  title: "Billing",
-  type: "text",
-  editUrl: "/billing",
-  details: [
-    {
-      id: "3",
-      subtitle: "Name",
-      info: "John Doe",
-    },
-    {
-      id: "4",
-      subtitle: "Address",
-      info: "Algiers, Algiers, 18045, Algieria",
-    },
-  ],
-};
-
-export const paymentInfo = {
-  title: "Payment",
-  type: "text",
-  editUrl: "/payment",
-  details: [
-    {
-      id: "5",
-      subtitle: "Method",
-      info: "PayPal",
-    },
-  ],
-};
-
 export const itemsInfo = {
   title: "Items",
   type: "card",

@@ -10,8 +10,9 @@ import PlaceOrderCard from "../components/PlaceOrderCard/PlaceOrderCard";
 import PlaceOrderShippingCard from "../components/PlaceOrderCard/PlaceOrderShippingCard";
 import PlaceOrderBillingCard from "../components/PlaceOrderCard/PlaceOrderBillingCard";
 import PlaceOrderPaymentCard from "../components/PlaceOrderCard/PlaceOrderPaymentCard";
+import PlaceOrderItemsCard from "../components/PlaceOrderCard/PlaceOrderItemsCard";
 import Footer from "../components/Footer/Footer";
-import { shippingInfo } from "../data/data";
+import { cartData } from "../data/data";
 
 export default function PlaceOrder() {
   const { shipping, billing, paymentMethod } = useSelector(
@@ -49,7 +50,7 @@ export default function PlaceOrder() {
               <PlaceOrderPaymentCard paymentMethod={paymentMethod} />
             </div>
             <div className={classNames(styles["placeOrder__info-sect"])}>
-              <PlaceOrderCard items info={shippingInfo} />
+              <PlaceOrderItemsCard itemsInfo={cartData} />
             </div>
           </section>
           <section className={classNames(styles.placeOrder__sumary)}>

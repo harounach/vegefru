@@ -16,7 +16,7 @@ const initialState = {
     postalCode: "",
     country: "",
   },
-  paymentMethod: "creditCard",
+  paymentMethod: "Credit Card",
 };
 
 const orderSlice = createSlice({
