@@ -2,6 +2,7 @@ import orderReducer, {
   addShipping,
   addBilling,
   addPaymentMethod,
+  resetOrder,
 } from "./orderSlice";
 
 describe("orderSlice", () => {
@@ -74,5 +75,51 @@ describe("orderSlice", () => {
     const newState = orderReducer(initialState, addPaymentMethod(paypal));
 
     expect(newState.paymentMethod).toBe(paypal);
+  });
+
+  test("should reset state to initial state", () => {
+    const initialState = {
+      shipping: {
+        fullName: "",
+        address: "",
+        city: "",
+        postalCode: "",
+        country: "",
+        fillBilling: false,
+      },
+      billing: {
+        fullName: "",
+        address: "",
+        city: "",
+        postalCode: "",
+        country: "",
+      },
+      paymentMethod: "Credit Card",
+    };
+
+    const orderState = {
+      shipping: {
+        fullName: "John Doe",
+        address: "Algiers",
+        city: "Algiers",
+        postalCode: "12000",
+        country: "United States",
+        fillBilling: true,
+      },
+      billing: {
+        fullName: "John Doe",
+        address: "Algiers",
+        city: "Algiers",
+        postalCode: "12000",
+        country: "United States",
+      },
+      paymentMethod: "Paypal",
+    };
+
+    const newState = orderReducer(orderState, resetOrder());
+
+    expect(newState.shipping).toStrictEqual(initialState.shipping);
+    expect(newState.billing).toStrictEqual(initialState.billing);
+    expect(newState.paymentMethod).toStrictEqual(initialState.paymentMethod);
   });
 });

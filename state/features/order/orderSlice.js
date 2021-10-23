@@ -32,11 +32,32 @@ const orderSlice = createSlice({
     addPaymentMethod(state, action) {
       state.paymentMethod = action.payload;
     },
+    resetOrder(state, action) {
+      state.shipping = {
+        fullName: "",
+        address: "",
+        city: "",
+        postalCode: "",
+        country: "",
+        fillBilling: false,
+      };
+
+      state.billing = {
+        fullName: "",
+        address: "",
+        city: "",
+        postalCode: "",
+        country: "",
+      };
+
+      state.paymentMethod = "Credit Card";
+    },
   },
 });
 
 // action creators
-export const { addShipping, addBilling, addPaymentMethod } = orderSlice.actions;
+export const { addShipping, addBilling, addPaymentMethod, resetOrder } =
+  orderSlice.actions;
 
 // reducer
 export default orderSlice.reducer;
