@@ -46,7 +46,7 @@ const CartSummary = ({ order, customClasses }) => {
           primary
           customClasses={styles["summary-card__btn"]}
         >
-          Place Order
+          Checkout
         </Button>
       </div>
     </div>
