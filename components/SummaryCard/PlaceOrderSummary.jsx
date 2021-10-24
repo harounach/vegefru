@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
 import classNames from "classnames";
+import axios from "axios";
 import styles from "./SummaryCard.module.scss";
 import Button from "../Button/Button";
 import { resetOrder } from "../../state/features/order/orderSlice";
@@ -8,9 +10,30 @@ import { resetCart } from "../../state/features/cart/cartSlice";
 
 const PlaceOrderSummary = ({ order, customClasses }) => {
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const submitOrder = async () => {
+    try {
+      const { data } = await axios({
+        method: "POST",
+        url: "/api/checkout_sessions",
+        data: {
+          order,
+        },
+      });
+      console.log(data.url);
+
+      window.location = data.url;
+
+      // await axios.post("/api/checkout_sessions");
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   const handleOrder = async () => {
     // alert("Items bought successfully");
+    await submitOrder();
     dispatch(resetOrder());
     dispatch(resetCart());
   };
@@ -51,15 +74,13 @@ const PlaceOrderSummary = ({ order, customClasses }) => {
         <span className={classNames(styles["summary-card__bold"])}>$9.00</span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
-        <form action="/api/checkout_sessions" method="POST">
-          <Button
-            primary
-            customClasses={styles["summary-card__btn"]}
-            clickHandler={handleOrder}
-          >
-            Place Order
-          </Button>
-        </form>
+        <Button
+          primary
+          customClasses={styles["summary-card__btn"]}
+          clickHandler={handleOrder}
+        >
+          Place Order
+        </Button>
       </div>
     </div>
   );
