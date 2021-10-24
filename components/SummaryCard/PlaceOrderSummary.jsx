@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useRouter } from "next/router";
 import classNames from "classnames";
 import styles from "./SummaryCard.module.scss";
 import Button from "../Button/Button";
@@ -9,13 +8,11 @@ import { resetCart } from "../../state/features/cart/cartSlice";
 
 const PlaceOrderSummary = ({ order, customClasses }) => {
   const dispatch = useDispatch();
-  const router = useRouter();
 
-  const handleOrder = () => {
-    alert("Items bought successfully");
+  const handleOrder = async () => {
+    // alert("Items bought successfully");
     dispatch(resetOrder());
     dispatch(resetCart());
-    router.push("/");
   };
 
   return (
@@ -54,13 +51,15 @@ const PlaceOrderSummary = ({ order, customClasses }) => {
         <span className={classNames(styles["summary-card__bold"])}>$9.00</span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
-        <Button
-          primary
-          customClasses={styles["summary-card__btn"]}
-          clickHandler={handleOrder}
-        >
-          Place Order
-        </Button>
+        <form action="/api/checkout_sessions" method="POST">
+          <Button
+            primary
+            customClasses={styles["summary-card__btn"]}
+            clickHandler={handleOrder}
+          >
+            Place Order
+          </Button>
+        </form>
       </div>
     </div>
   );
