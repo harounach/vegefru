@@ -3,7 +3,7 @@ import classNames from "classnames";
 import styles from "./SummaryCard.module.scss";
 import Button from "../Button/Button";
 
-const CartSummary = ({ order, customClasses }) => {
+const CartSummary = ({ summary, customClasses }) => {
   return (
     <div className={classNames(styles["summary-card"], customClasses)}>
       <div className={classNames(styles["summary-card__section"])}>
@@ -13,10 +13,10 @@ const CartSummary = ({ order, customClasses }) => {
       </div>
       <div className={classNames(styles["summary-card__section"])}>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          Item (2)
+          {`Item (${summary.count})`}
         </span>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          $5.00
+          {`$${summary.subtotal.toFixed(2)}`}
         </span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
@@ -24,7 +24,7 @@ const CartSummary = ({ order, customClasses }) => {
           Shipping
         </span>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          $3.00
+          {`$${summary.shipping.toFixed(2)}`}
         </span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
@@ -32,12 +32,14 @@ const CartSummary = ({ order, customClasses }) => {
           Tax
         </span>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          $1.00
+          {`$${summary.tax.toFixed(2)}`}
         </span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
         <span className={classNames(styles["summary-card__bold"])}>Total</span>
-        <span className={classNames(styles["summary-card__bold"])}>$9.00</span>
+        <span
+          className={classNames(styles["summary-card__bold"])}
+        >{`$${summary.total.toFixed(2)}`}</span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
         <Button

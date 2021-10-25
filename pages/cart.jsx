@@ -10,11 +10,15 @@ import CartProductCard from "../components/CartProductCard/CartProductCard";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
 import Footer from "../components/Footer/Footer";
 
+import { useSummary } from "../hooks/summary";
+
 export default function Cart(props) {
   const cartProductsIds = useSelector(selectCartProductsIds);
   const renderedCartProducts = cartProductsIds.map((productId) => {
     return <CartProductCard key={productId} id={productId} />;
   });
+
+  const summary = useSummary();
 
   return (
     <div className={classNames(styles.cart)}>
@@ -38,18 +42,7 @@ export default function Cart(props) {
             </div>
           </section>
           <section className={classNames(styles.cart__sumary)}>
-            <CartSummary
-              order={{
-                title: "Order Summary",
-                itemsNum: 2,
-                itemsPrice: 5,
-                shipping: 3,
-                tax: 1,
-                total: 9,
-                btnTitle: "Checkout",
-                btnHref: "/shipping",
-              }}
-            />
+            <CartSummary summary={summary} />
           </section>
         </main>
       </div>
