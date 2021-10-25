@@ -8,7 +8,7 @@ import Button from "../Button/Button";
 import { resetOrder } from "../../state/features/order/orderSlice";
 import { resetCart } from "../../state/features/cart/cartSlice";
 
-const PlaceOrderSummary = ({ order, customClasses }) => {
+const PlaceOrderSummary = ({ order, customClasses, summary }) => {
   const dispatch = useDispatch();
   const router = useRouter();
 
@@ -47,10 +47,10 @@ const PlaceOrderSummary = ({ order, customClasses }) => {
       </div>
       <div className={classNames(styles["summary-card__section"])}>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          Item (2)
+          {`Item (${summary.count})`}
         </span>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          $5.00
+          {`$${summary.subtotal.toFixed(2)}`}
         </span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
@@ -58,7 +58,7 @@ const PlaceOrderSummary = ({ order, customClasses }) => {
           Shipping
         </span>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          $3.00
+          {`$${summary.shipping.toFixed(2)}`}
         </span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
@@ -66,12 +66,14 @@ const PlaceOrderSummary = ({ order, customClasses }) => {
           Tax
         </span>
         <span className={classNames(styles["summary-card__subtitle"])}>
-          $1.00
+          {`$${summary.tax.toFixed(2)}`}
         </span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
         <span className={classNames(styles["summary-card__bold"])}>Total</span>
-        <span className={classNames(styles["summary-card__bold"])}>$9.00</span>
+        <span
+          className={classNames(styles["summary-card__bold"])}
+        >{`$${summary.total.toFixed(2)}`}</span>
       </div>
       <div className={classNames(styles["summary-card__section"])}>
         <Button
