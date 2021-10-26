@@ -1,0 +1,55 @@
+// admin-product
+.admin-product {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  // admin-product__sect
+  &__sect {
+    width: 16.66%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  // admin-product__img
+  &__img {
+    width: 160px;
+    height: 112px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  // admin-product__name
+  &__name {
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  // admin-product__price
+  &__price {
+  }
+
+  // admin-product__qty-unit
+  &__qty-unit {
+  }
+
+  // admin-product__reviews
+  &__reviews {
+  }
+
+  // admin-product__actions
+  &__actions {
+  }
+
+  // admin-product__edit
+  &__edit {
+  }
+
+  // admin-product__delete
+  &__delete {
+  }
+}

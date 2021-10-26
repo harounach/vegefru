@@ -1,18 +1,23 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import classNames from "classnames";
 import styles from "./dashboard.module.scss";
 import Appbar from "../../components/Appbar/Appbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
+import AdminProduct from "../../components/Admin/AdminProduct/AdminProduct";
+import { productsData } from "../../data/data";
 
 export default function Dashboard() {
+  const allProductsView = productsData.map((product) => {
+    return <AdminProduct key={product.id} product={product} />;
+  });
+
   return (
     <div>
       <Head>
-        <title>Admin Login</title>
-        <meta name="description" content="VegeFru Admin Login" />
+        <title>Admin Dashboard</title>
+        <meta name="description" content="VegeFru Admin Dashboard" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
@@ -22,89 +27,17 @@ export default function Dashboard() {
           logo
         />
         <main className="admin-dashboard__main">
-          <div>
+          <div className="admin-dashboard__btn-wrapper">
             <Button
               primary
               url="/admin/products/add"
               link
-              customClasses="form__btn"
+              customClasses="admin-dashboard__btn"
             >
               Create New Product
             </Button>
           </div>
-          <ul>
-            <li>
-              Product 1{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="edit"
-                url="/admin/products/edit/1"
-              />{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="delete"
-                url="/admin/products/delete/1"
-              />
-            </li>
-
-            <li>
-              Product 2{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="edit"
-                url="/admin/products/edit/2"
-              />{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="delete"
-                url="/admin/products/delete/2"
-              />
-            </li>
-
-            <li>
-              Product 3{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="edit"
-                url="/admin/products/edit/3"
-              />{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="delete"
-                url="/admin/products/delete/3"
-              />
-            </li>
-
-            <li>
-              Product 4{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="edit"
-                url="/admin/products/edit/4"
-              />{" "}
-              <Button
-                secondary
-                link
-                icon
-                iconType="delete"
-                url="/admin/products/delete/4"
-              />
-            </li>
-          </ul>
+          <div className="admin-dashboard__grid">{allProductsView}</div>
         </main>
       </div>
       {/* Footer */}
