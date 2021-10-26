@@ -14,7 +14,7 @@ export default function Dashboard() {
   });
 
   return (
-    <div>
+    <div className={classNames(styles["admin-dashboard"])}>
       <Head>
         <title>Admin Dashboard</title>
         <meta name="description" content="VegeFru Admin Dashboard" />
@@ -26,18 +26,20 @@ export default function Dashboard() {
           customClasses={classNames(styles["admin-dashboard__header"])}
           logo
         />
-        <main className="admin-dashboard__main">
-          <div className="admin-dashboard__btn-wrapper">
+        <main className={classNames(styles["admin-dashboard__main"])}>
+          <div className={classNames(styles["admin-dashboard__btn-wrapper"])}>
             <Button
               primary
               url="/admin/products/add"
               link
-              customClasses="admin-dashboard__btn"
+              customClasses={classNames(styles["admin-dashboard__btn"])}
             >
               Create New Product
             </Button>
           </div>
-          <div className="admin-dashboard__grid">{allProductsView}</div>
+          <div className={classNames(styles["admin-dashboard__grid"])}>
+            {allProductsView}
+          </div>
         </main>
       </div>
       {/* Footer */}

@@ -38,6 +38,7 @@ const AdminProduct = ({ product }) => {
             primary
             icon
             iconType="edit"
+            link
             url={`/admin/products/edit/${product.id}`}
             customClasses={classNames(styles["admin-product__edit"])}
           />{" "}
