@@ -12,7 +12,7 @@ handler.post(
    * @param {import("next").NextApiResponse} res
    */
   async (req, res) => {
-    // TODO: Add product to the database
+    // TODO: Update product in the database
     const product = {};
     product["_id"] = req.body._id;
     product["name"] = req.body.name;
