@@ -1,12 +1,18 @@
 import { productsData } from "../../data/data";
+import ProductModel from "../../models/product/productModel";
 
 // TODO: Get all products
 export const getAllProducts = () => {
   return productsData;
 };
 
-// TODO: Create a product
-export const createProduct = () => {};
+/**
+ * Create a product
+ */
+export const createProduct = async (product) => {
+  const newProduct = new ProductModel(product);
+  return await newProduct.save();
+};
 
 // TODO: Update a product
 export const updateProduct = () => {};
