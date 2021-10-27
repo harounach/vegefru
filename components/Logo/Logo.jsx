@@ -3,10 +3,12 @@ import Link from "next/link";
 import classNames from "classnames";
 import styles from "./Logo.module.scss";
 
-const Logo = ({ customClasses }) => {
+const Logo = ({ customClasses, admin }) => {
+  const url = admin ? "/admin/dashboard" : "/";
+
   return (
-    <Link href="/" passHref>
-      <a className={classNames(styles.logo)}>
+    <Link href={url} passHref>
+      <a className={classNames(styles.logo, customClasses)}>
         <img
           src="/images/logo.svg"
           alt="FruigeBag logo"

@@ -7,7 +7,7 @@ import Logo from "../Logo/Logo";
 import Searchbar from "../Searchbar/Searchbar";
 import Button from "../Button/Button";
 
-const Appbar = ({ logo, search, nav, customClasses }) => {
+const Appbar = ({ logo, search, nav, customClasses, admin }) => {
   let logoSection = null;
   let searchSection = null;
   let navSection = null;
@@ -19,7 +19,7 @@ const Appbar = ({ logo, search, nav, customClasses }) => {
   if (logo) {
     logoSection = (
       <div className={classNames(styles.appbar__logo)}>
-        <Logo />
+        <Logo admin={admin} />
       </div>
     );
   }
