@@ -10,7 +10,7 @@ import Products from "../components/Products/Products";
 import NewsLetter from "../components/NewsLetter/NewsLetter";
 import Footer from "../components/Footer/Footer";
 import { featuredData, productsData } from "../data/data";
-import { getProducts } from "../services/products";
+import { getAllProducts } from "../services/product/products";
 
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
@@ -83,7 +83,7 @@ export default function Home({ products }) {
 }
 
 export const getServerSideProps = async () => {
-  const products = getProducts();
+  const products = getAllProducts();
   return {
     props: {
       products: products,
