@@ -1,6 +1,6 @@
 import nc from "next-connect";
 import {
-  createProduct,
+  updateProduct,
   productExist,
 } from "../../../services/product/products";
 
@@ -14,6 +14,7 @@ handler.post(
   async (req, res) => {
     // TODO: Add product to the database
     const product = {};
+    product["_id"] = req.body._id;
     product["name"] = req.body.name;
     product["price"] = req.body.price;
     product["image"] = req.body.image;
@@ -23,7 +24,7 @@ handler.post(
     product["rating"] = req.body.rating;
     product["numReviews"] = req.body.numReviews;
     product["reviews"] = [];
-    res.json({ message: "Product Created Successfully", payload: { product } });
+    res.json({ message: "Product Updated Successfully", payload: { product } });
   }
 );
 
