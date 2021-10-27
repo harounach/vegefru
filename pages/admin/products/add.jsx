@@ -8,6 +8,16 @@ import Button from "../../../components/Button/Button";
 import Footer from "../../../components/Footer/Footer";
 import FormField from "../../../components/FormField/FormField";
 
+import {
+  isValidName,
+  isValidPrice,
+  isValidQtyUnit,
+  isValidImage,
+  isValidCountInStock,
+  isValidRating,
+  isValidNumReviews,
+} from "../../../utils/form";
+
 export default function AddProduct() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState(0);
@@ -23,9 +33,74 @@ export default function AddProduct() {
   const [imageError, setImageError] = useState("");
   const [countInStockError, setCountInStockError] = useState(0);
   const [ratingError, setRatingError] = useState(0);
-  const [numReviewsError, setnumReviewsError] = useState(0);
+  const [numReviewsError, setNumReviewsError] = useState(0);
 
-  const handleSubmit = async () => {};
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+    handleErrorMessages("", "", "", "", "");
+
+    const checkName = isValidName(name);
+    const checkPrice = isValidPrice(price);
+    const checkQtyUnit = isValidQtyUnit(qtyUnit);
+    const checkImage = isValidImage(image);
+    const checkCountInStock = isValidCountInStock(countInStock);
+    const checkRating = isValidRating(rating);
+    const checkNumReviews = isValidNumReviews(numReviews);
+
+    handleErrorMessages(
+      checkName.errorMessage,
+      checkPrice.errorMessage,
+      checkQtyUnit.errorMessage,
+      checkImage.errorMessage,
+      checkCountInStock.errorMessage,
+      checkRating.errorMessage,
+      checkNumReviews.errorMessage
+    );
+
+    const validFields =
+      checkName.answer &&
+      checkPrice.answer &&
+      checkQtyUnit.answer &&
+      checkImage.answer &&
+      checkCountInStock.answer &&
+      checkRating.answer &&
+      checkNumReviews.answer;
+
+    if (validFields) {
+      // fields are valid
+      alert("Fields are valid");
+    }
+  };
+
+  /**
+   * Handle error messages
+   * @param {string} nameMsg
+   * @param {string} priceMsg
+   * @param {string} qtyUnitMsg
+   * @param {string} imageMsg
+   * @param {string} countInStockMsg
+   * @param {string} ratingMsg
+   * @param {string} numReviewsMsg
+   *
+   * @returns {void}
+   */
+  const handleErrorMessages = (
+    nameMsg,
+    priceMsg,
+    qtyUnitMsg,
+    imageMsg,
+    countInStockMsg,
+    ratingMsg,
+    numReviewsMsg
+  ) => {
+    setNameError(nameMsg);
+    setPriceError(priceMsg);
+    setQtyUnitError(qtyUnitMsg);
+    setImageError(imageMsg);
+    setCountInStockError(countInStockMsg);
+    setRatingError(ratingMsg);
+    setNumReviewsError(numReviewsMsg);
+  };
 
   return (
     <div className="add-product">
