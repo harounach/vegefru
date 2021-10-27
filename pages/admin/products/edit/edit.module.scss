@@ -1,19 +1,19 @@
-// add-product
-.add-product {
+// edit-product
+.edit-product {
   width: 100%;
-  // add-product__header
+  // edit-product__header
   &__header {
     margin-top: 1rem;
     margin-bottom: 40px;
   }
 
-  // add-product__form
+  // edit-product__form
   &__form {
     max-width: 488px;
     margin: 0 auto 2rem;
   }
 
-  // add-product__footer
+  // edit-product__footer
   &__footer {
   }
 }

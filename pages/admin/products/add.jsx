@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Head from "next/head";
-import Link from "next/link";
 import classNames from "classnames";
 import styles from "./add.module.scss";
 import Appbar from "../../../components/Appbar/Appbar";
@@ -28,12 +27,12 @@ export default function AddProduct() {
   const [numReviews, setnumReviews] = useState(0);
 
   const [nameError, setNameError] = useState("");
-  const [priceError, setPriceError] = useState(0);
+  const [priceError, setPriceError] = useState("");
   const [qtyUnitError, setQtyUnitError] = useState("");
   const [imageError, setImageError] = useState("");
-  const [countInStockError, setCountInStockError] = useState(0);
-  const [ratingError, setRatingError] = useState(0);
-  const [numReviewsError, setNumReviewsError] = useState(0);
+  const [countInStockError, setCountInStockError] = useState("");
+  const [ratingError, setRatingError] = useState("");
+  const [numReviewsError, setNumReviewsError] = useState("");
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -178,7 +177,7 @@ export default function AddProduct() {
             <div className="form__section">
               {/* Count In Stock */}
               <FormField
-                type="text"
+                type="number"
                 id="countInStock"
                 name="countInStock"
                 label="Count In Stock"
