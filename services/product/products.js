@@ -22,3 +22,7 @@ export const deleteProduct = () => {};
 
 // TODO: Delete all products
 export const deleteAllProducts = () => {};
+
+export const productExist = async (name) => {
+  return await ProductModel.exists({ name: name });
+};
