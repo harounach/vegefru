@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import classNames from "classnames";
 import styles from "./add.module.scss";
@@ -6,16 +6,6 @@ import Appbar from "../../../components/Appbar/Appbar";
 import Button from "../../../components/Button/Button";
 import Footer from "../../../components/Footer/Footer";
 import FormField from "../../../components/FormField/FormField";
-
-import {
-  isValidName,
-  isValidPrice,
-  isValidQtyUnit,
-  isValidImage,
-  isValidCountInStock,
-  isValidRating,
-  isValidNumReviews,
-} from "../../../utils/form";
 
 import {
   useName,
