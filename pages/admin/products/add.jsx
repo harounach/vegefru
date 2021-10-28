@@ -17,34 +17,42 @@ import {
   isValidNumReviews,
 } from "../../../utils/form";
 
-export default function AddProduct() {
-  const [name, setName] = useState("");
-  const [price, setPrice] = useState(0);
-  const [qtyUnit, setQtyUnit] = useState("");
-  const [image, setImage] = useState("");
-  const [countInStock, setCountInStock] = useState(0);
-  const [rating, setRating] = useState(0);
-  const [numReviews, setnumReviews] = useState(0);
+import {
+  useName,
+  usePrice,
+  useQtyUnit,
+  useImage,
+  useCountInStock,
+  useRating,
+  useNumReviews,
+} from "../../../hooks/productHooks";
 
-  const [nameError, setNameError] = useState("");
-  const [priceError, setPriceError] = useState("");
-  const [qtyUnitError, setQtyUnitError] = useState("");
-  const [imageError, setImageError] = useState("");
-  const [countInStockError, setCountInStockError] = useState("");
-  const [ratingError, setRatingError] = useState("");
-  const [numReviewsError, setNumReviewsError] = useState("");
+export default function AddProduct() {
+  const [name, setName, nameError, setNameError, checkName] = useName();
+  const [price, setPrice, priceError, setPriceError, checkPrice] = usePrice();
+  const [qtyUnit, setQtyUnit, qtyUnitError, setQtyUnitError, checkQtyUnit] =
+    useQtyUnit();
+  const [image, setImage, imageError, setImageError, checkImage] = useImage();
+  const [
+    countInStock,
+    setCountInStock,
+    countInStockError,
+    setCountInStockError,
+    checkCountInStock,
+  ] = useCountInStock();
+  const [rating, setRating, ratingError, setRatingError, checkRating] =
+    useRating();
+  const [
+    numReviews,
+    setNumReviews,
+    numReviewsError,
+    setNumReviewsError,
+    checkNumReviews,
+  ] = useNumReviews();
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     handleErrorMessages("", "", "", "", "");
-
-    const checkName = isValidName(name);
-    const checkPrice = isValidPrice(price);
-    const checkQtyUnit = isValidQtyUnit(qtyUnit);
-    const checkImage = isValidImage(image);
-    const checkCountInStock = isValidCountInStock(countInStock);
-    const checkRating = isValidRating(rating);
-    const checkNumReviews = isValidNumReviews(numReviews);
 
     handleErrorMessages(
       checkName.errorMessage,
@@ -206,7 +214,7 @@ export default function AddProduct() {
                 name="numReviews"
                 label="NumReviews"
                 value={numReviews}
-                onChange={(e) => setnumReviews(e.target.value)}
+                onChange={(e) => setNumReviews(e.target.value)}
                 errorMessage={numReviewsError}
               />
             </div>
