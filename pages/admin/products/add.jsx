@@ -1,6 +1,8 @@
 import React from "react";
 import Head from "next/head";
 import classNames from "classnames";
+import axios from "axios";
+import { useRouter } from "next/router";
 import styles from "./add.module.scss";
 import Appbar from "../../../components/Appbar/Appbar";
 import Button from "../../../components/Button/Button";
@@ -18,6 +20,8 @@ import {
 } from "../../../hooks/productHooks";
 
 export default function AddProduct() {
+  const router = useRouter();
+
   const [name, setName, nameError, setNameError, checkName] = useName();
   const [price, setPrice, priceError, setPriceError, checkPrice] = usePrice();
   const [qtyUnit, setQtyUnit, qtyUnitError, setQtyUnitError, checkQtyUnit] =
@@ -66,6 +70,20 @@ export default function AddProduct() {
     if (validFields) {
       // fields are valid
       alert("Fields are valid");
+      const { data } = await axios.post("/api/products/create", {
+        name,
+        price,
+        image,
+        qty_unit: qtyUnit,
+        qty: 1,
+        countInStock,
+        rating,
+        numReviews,
+      });
+
+      console.log(data);
+
+      router.push("/admin/dashboard");
     }
   };
 
