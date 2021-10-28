@@ -1,0 +1,23 @@
+// delete-product
+.delete-product {
+  width: 100%;
+  // delete-product__header
+  &__header {
+    margin-top: 1rem;
+    margin-bottom: 40px;
+  }
+
+  // delete-product__main
+  &__main {
+  }
+
+  // delete-product__form
+  &__form {
+    max-width: 488px;
+    margin: 0 auto 2rem;
+  }
+
+  // delete-product__footer
+  &__footer {
+  }
+}

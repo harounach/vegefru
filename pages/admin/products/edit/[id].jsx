@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Head from "next/head";
 import classNames from "classnames";
 import styles from "./edit.module.scss";
@@ -102,8 +102,8 @@ export default function EditProduct() {
   return (
     <div className="edit-product">
       <Head>
-        <title>Create New Product</title>
-        <meta name="description" content="VegeFru Create New Product" />
+        <title>Edit Product</title>
+        <meta name="description" content="VegeFru Edit Product" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="container">
