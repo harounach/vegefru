@@ -1,0 +1,52 @@
+@use "../../styles/abstracts/variables" as vars;
+
+// image-uploader
+.image-uploader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  // image-uploader__label
+  &__label {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 14px;
+    background-color: vars.$primary-color;
+
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+
+  // image-uploader__input
+  &__input {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+  }
+
+  // image-uploader__preview
+  &__preview {
+    width: 160px;
+    height: 112px;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  // image-uploader__error
+  &__error {
+    margin: 0.5rem 0 0;
+    padding: 0.5rem;
+    background-color: rgba($color: vars.$secondary-color, $alpha: 0.18);
+    color: vars.$secondary-color;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+}

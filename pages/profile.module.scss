@@ -7,10 +7,34 @@
     margin-bottom: 40px;
   }
 
+  // profile__main
+  &__main {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+  }
+
   // profile__form
   &__form {
-    max-width: 488px;
-    margin: 0 auto 2rem;
+    flex: 488px;
+    margin: 0 0 2rem;
+  }
+
+  // profile__grid
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    flex: 488px;
+  }
+
+  // profile__order
+  &__order {
+    width: 100%;
+    max-height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #fff;
   }
 
   // profile__footer

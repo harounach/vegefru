@@ -11,6 +11,9 @@ const Appbar = ({ logo, search, nav, customClasses, admin }) => {
   let logoSection = null;
   let searchSection = null;
   let navSection = null;
+  let navButtons = null;
+
+  let isLoggedIn = true;
 
   const cartProductsIds = useSelector(selectCartProductsIds);
   const numOfProducts = cartProductsIds.length;
@@ -33,6 +36,17 @@ const Appbar = ({ logo, search, nav, customClasses, admin }) => {
     );
   }
 
+  // show profile or login button
+  navButtons = isLoggedIn ? (
+    <Button url="/profile" primary link outline>
+      Account
+    </Button>
+  ) : (
+    <Button url="/login" primary link>
+      Login
+    </Button>
+  );
+
   // add nav section
   if (nav) {
     navSection = (
@@ -48,9 +62,8 @@ const Appbar = ({ logo, search, nav, customClasses, admin }) => {
             link
           />
 
-          <Button url="/login" primary link>
-            Login
-          </Button>
+          {/* show login or profile buttons */}
+          {navButtons}
         </nav>
       </div>
     );

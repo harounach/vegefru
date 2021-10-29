@@ -8,6 +8,7 @@ import Appbar from "../../../components/Appbar/Appbar";
 import Button from "../../../components/Button/Button";
 import Footer from "../../../components/Footer/Footer";
 import FormField from "../../../components/FormField/FormField";
+import ImageUploader from "../../../components/ImageUploader/ImageUploader";
 
 import {
   useName,
@@ -43,6 +44,12 @@ export default function AddProduct() {
     setNumReviewsError,
     checkNumReviews,
   ] = useNumReviews();
+
+  const handleImageUpload = async (evt) => {
+    const file = evt.target.files[0];
+    console.log(file);
+    alert(`Your image is: ${file}`);
+  };
 
   const handleSubmit = async (evt) => {
     evt.preventDefault();
@@ -187,6 +194,18 @@ export default function AddProduct() {
                 label="Image"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
+                errorMessage={imageError}
+              />
+            </div>
+            <div className="form__section">
+              {/* Image */}
+              <ImageUploader
+                type="file"
+                id="imageuploader"
+                name="image"
+                label="Image"
+                value={image}
+                onChange={handleImageUpload}
                 errorMessage={imageError}
               />
             </div>

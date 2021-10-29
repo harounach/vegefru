@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Link from "next/link";
 import classNames from "classnames";
 import styles from "./profile.module.scss";
 import Appbar from "../components/Appbar/Appbar";
@@ -8,7 +7,13 @@ import FormField from "../components/FormField/FormField";
 import Button from "../components/Button/Button";
 import Footer from "../components/Footer/Footer";
 
-export default function profile() {
+export default function Profile() {
+  const handleSubmit = async (evt) => {
+    evt.preventDefault();
+
+    alert("Profile Updated");
+  };
+
   return (
     <div className={classNames(styles.profile)}>
       <Head>
@@ -24,8 +29,11 @@ export default function profile() {
           search
           nav
         />
-        <main className="profile__main">
-          <form className={classNames(styles.profile__form, "form")}>
+        <main className={classNames(styles.profile__main)}>
+          <form
+            className={classNames(styles.profile__form, "form")}
+            onSubmit={handleSubmit}
+          >
             <div className="form__section">
               <h1 className="form__title">My Account</h1>
             </div>
@@ -72,12 +80,37 @@ export default function profile() {
                 Update
               </Button>
             </div>
-            <div className="form__section">
-              <Button secondary outline customClasses="form__btn">
-                Delete
-              </Button>
-            </div>
           </form>
+          <div className={classNames(styles.profile__grid)}>
+            <div className={classNames(styles.profile__order)}>
+              Order 1
+              <Button primary link url="/order/12">
+                {" "}
+                View{" "}
+              </Button>{" "}
+            </div>
+            <div className={classNames(styles.profile__order)}>
+              Order 2{" "}
+              <Button primary link url="/order/12">
+                {" "}
+                View{" "}
+              </Button>{" "}
+            </div>
+            <div className={classNames(styles.profile__order)}>
+              Order 3{" "}
+              <Button primary link url="/order/12">
+                {" "}
+                View{" "}
+              </Button>{" "}
+            </div>
+            <div className={classNames(styles.profile__order)}>
+              Order 4{" "}
+              <Button primary link url="/order/12">
+                {" "}
+                View{" "}
+              </Button>{" "}
+            </div>
+          </div>
         </main>
       </div>
       {/* Footer */}
