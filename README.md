@@ -1,6 +1,6 @@
-# FruigeBag
+# VegeFru
 
-**FruigeBag** is groceries store web app
+**VegeFru** is groceries store web app
 
 Developed by **Haroun Achouche**
 
