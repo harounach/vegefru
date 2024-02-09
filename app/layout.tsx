@@ -1,3 +1,5 @@
+import "@/app/ui/global.css";
+
 export default async function RootLayout({
   children,
 }: {
