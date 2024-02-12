@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import daisyui from "daisyui";
 import tailwindForms from "@tailwindcss/forms";
 
 const config: Config = {
@@ -11,6 +10,6 @@ const config: Config = {
   theme: {
     extend: {},
   },
-  plugins: [tailwindForms, daisyui],
+  plugins: [tailwindForms],
 };
 export default config;
