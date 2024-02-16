@@ -4,15 +4,17 @@ import ProductCard from "./ProductCard";
 interface ProductListProps {
   query: string;
   currentPage: number;
+  category: string;
   custom?: string;
 }
 
 export default async function ProductList({
   query,
   currentPage,
+  category,
   custom,
 }: ProductListProps) {
-  const products = await fetchFilteredProducts(query, currentPage);
+  const products = await fetchFilteredProducts(query, currentPage, category);
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
       {products?.map((product) => {

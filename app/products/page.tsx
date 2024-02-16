@@ -15,18 +15,22 @@ export default async function ProductsPage({
   const currentPage = Number(searchParams?.page) || 1;
   const category = searchParams?.category || "";
 
-  const totalPages = await fetchProductsPages(query);
+  const totalPages = await fetchProductsPages(query, category);
 
   return (
     <main id="content">
       <section className="bg-zinc-100">
         <div className="container mx-auto  px-4 py-6 sm:px-0">
-          <h2 className="mb-4 text-center text-lg font-medium">Products</h2>
-          <p className="font-base mb-6 text-center text-base">
+          <h1 className="mb-4 text-center text-3xl font-semibold">Products</h1>
+          <p className="mb-6 text-center text-base font-normal text-slate-600">
             Shop your favorite taste of coffee
           </p>
           <div className="mb-4">
-            <ProductList query={query} currentPage={currentPage} />
+            <ProductList
+              query={query}
+              currentPage={currentPage}
+              category={category}
+            />
           </div>
           <div>
             <Pagination totalPages={totalPages} />

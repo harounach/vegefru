@@ -1,6 +1,7 @@
 import "@/app/ui/global.css";
 import Header from "@/app/ui/navigation/Header";
 import Footer from "@/app/ui/navigation/Footer";
+import { poppins } from "@/app/ui/fonts";
 
 export default async function RootLayout({
   children,
@@ -9,7 +10,7 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${poppins.className} antialiased`}>
         <Header />
         {children}
         <Footer />

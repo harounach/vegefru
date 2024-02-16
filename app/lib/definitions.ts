@@ -14,7 +14,7 @@ export type Product = {
   price: number;
   image: string;
   slug: string;
-  category: "fruits" | "vegetables";
+  category: string;
   rating: number;
   numReviews: number;
   isFeatured: boolean;

@@ -8,10 +8,10 @@ import { generatePagination } from "@/app/lib/utils/productUtils";
 
 interface PaginationProps {
   totalPages: number;
-  custom?: string;
+  className?: string;
 }
 
-export default function Pagination({ totalPages, custom }: PaginationProps) {
+export default function Pagination({ totalPages, className }: PaginationProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get("page")) || 1;
@@ -25,7 +25,7 @@ export default function Pagination({ totalPages, custom }: PaginationProps) {
   const allPages = generatePagination(currentPage, totalPages);
 
   return (
-    <div className={`flex items-center divide-x ${custom}`}>
+    <div className={`flex items-center divide-x ${className}`}>
       <PaginationArrow
         direction="left"
         url={createPageURL(currentPage - 1)}
