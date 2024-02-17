@@ -18,7 +18,7 @@ export default function Footer() {
                   className="h-12 w-12 md:h-14 md:w-14"
                 />
 
-                <span className="text-2xl text-white">VegeFru</span>
+                <span className="text-2xl font-medium text-white">VegeFru</span>
               </Link>
             </div>
 

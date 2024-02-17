@@ -1,4 +1,4 @@
-import AccountSidebar from "@/app/ui/navigation/AccountSidebar";
+import AccountSidebar from "@/app/ui/navigation/sidebar/AccountSidebar";
 
 export default function AccoutLayout({
   children,
