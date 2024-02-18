@@ -6,6 +6,7 @@ import {
   BsPeopleFill,
 } from "react-icons/bs";
 import SidebarItem from "./SidebarItem";
+import SidebarLogoutItem from "./SidebarLogoutItem";
 
 export default function AdminSidebar() {
   return (
@@ -39,10 +40,12 @@ export default function AdminSidebar() {
               <BsPeopleFill />
             </SidebarItem>
           </li>
+
+          {/* Logout */}
           <li>
-            <button className="flex items-center gap-4 px-4 py-2">
-              <BsBoxArrowRight /> <span>Logout</span>
-            </button>
+            <SidebarLogoutItem label="Logout">
+              <BsBoxArrowRight />
+            </SidebarLogoutItem>
           </li>
         </ul>
       </nav>
