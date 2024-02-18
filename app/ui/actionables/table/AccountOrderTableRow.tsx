@@ -29,7 +29,7 @@ export default function AccountOrderTableRow({
   return (
     <tr className={`border-b bg-white ${className}`}>
       <td className="px-6 py-4">{truncateText(order._id)}</td>
-      <td className="px-6 py-4">{formatFriendyDate(order.createdAt)}</td>
+      <td className="px-6 py-4 text-nowrap">{formatFriendyDate(order.createdAt)}</td>
       <td className="px-6 py-4">{`$${order.totalPrice}`}</td>
       <td className="px-6 py-4">{paymentBadge}</td>
       <td className="px-6 py-4">{deliveryBadge}</td>

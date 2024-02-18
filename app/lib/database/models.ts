@@ -12,7 +12,7 @@ const userSchema = new Schema(
   },
   {
     timestamps: true,
-    collection: "scs_users",
+    collection: "vf_users",
   },
 );
 
@@ -33,7 +33,7 @@ const productSchema = new Schema(
   },
   {
     timestamps: true,
-    collection: "scs_products",
+    collection: "vf_products",
   },
 );
 
@@ -101,7 +101,7 @@ const orderSchema = new Schema(
   },
   {
     timestamps: true,
-    collection: "scs_orders",
+    collection: "vf_orders",
   },
 );
 
@@ -119,7 +119,7 @@ const reviewSchema = new Schema(
   },
   {
     timestamps: true,
-    collection: "scs_reviews",
+    collection: "vf_reviews",
   },
 );
 

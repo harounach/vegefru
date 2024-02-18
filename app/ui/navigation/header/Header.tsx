@@ -1,8 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import Navigation from "./Navigation";
+// import { auth } from "@/auth";
 
-export default function Header() {
+export default async function Header() {
+  // const session = await auth();
+  // const isLoggedIn = !!session?.user;
+  // const isAdmin = session?.user?.role === "admin";
+  const isLoggedIn = true;
+  const isAdmin = true;
+
   return (
     <header className="relative flex items-center justify-center py-2">
       <div className="container px-4 sm:px-0">
@@ -28,7 +35,7 @@ export default function Header() {
           </a>
 
           {/* Navigation */}
-          <Navigation />
+          <Navigation isLoggedIn={isLoggedIn} isAdmin={isAdmin} />
         </div>
       </div>
     </header>

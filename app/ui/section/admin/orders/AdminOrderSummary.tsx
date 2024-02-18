@@ -16,7 +16,7 @@ export default function AdminOrderSummary({
 
   return (
     <div
-      className={`inline-flex min-w-96 grow flex-col items-center justify-center rounded gap-6 bg-white p-4 ${className}`}
+      className={`inline-flex md:min-w-96 grow flex-col items-center justify-center rounded gap-6 bg-white p-4 ${className}`}
     >
       <h2 className="font-sans text-xl font-medium text-slate-900">Summary</h2>
       <div className="flex flex-col gap-4">

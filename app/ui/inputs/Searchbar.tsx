@@ -14,7 +14,10 @@ export default function Searchbar({ className }: SearchbarProps) {
 
   const handleSearch = useDebouncedCallback((term) => {
     const params = new URLSearchParams(searchParams);
-    params.set("page", "1");
+    if (params.has("page")) {
+      params.set("page", "1");
+    }
+
     if (term) {
       params.set("q", term);
     } else {

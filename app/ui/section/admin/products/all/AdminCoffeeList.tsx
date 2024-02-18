@@ -30,7 +30,7 @@ export default async function AdminCoffeeList({
       >
         <div className="flex items-center justify-between">
           <h3 className="font-sans text-xl font-medium text-slate-900">
-            Coffee
+            Fruits & Vegetables
           </h3>
           <LinkButton
             label="Create Product"

@@ -1,7 +1,7 @@
 import {
   BsBasket2Fill,
   BsBoxArrowRight,
-  BsCupHotFill,
+  BsTagsFill,
   BsGrid1X2Fill,
   BsPeopleFill,
 } from "react-icons/bs";
@@ -22,7 +22,7 @@ export default function AdminSidebar() {
           {/* Products */}
           <li>
             <SidebarItem label="Products" url="/admin/products">
-              <BsCupHotFill />
+              <BsTagsFill />
             </SidebarItem>
           </li>
 

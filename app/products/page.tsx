@@ -1,5 +1,6 @@
 import { fetchProductsPages } from "../lib/database/product/product.query";
 import Pagination from "../ui/actionables/Pagination";
+import Filter from "../ui/inputs/Filter";
 import ProductList from "../ui/section/shared/ProductList";
 
 export default async function ProductsPage({
@@ -25,6 +26,9 @@ export default async function ProductsPage({
           <p className="mb-6 text-center text-base font-normal text-slate-600">
             Shop your favorite taste of coffee
           </p>
+          <div className="mb-4">
+            <Filter />
+          </div>
           <div className="mb-4">
             <ProductList
               query={query}

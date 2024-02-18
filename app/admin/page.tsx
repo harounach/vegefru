@@ -1,8 +1,4 @@
-import {
-  BsCurrencyExchange,
-  BsBasket2Fill,
-  BsCupHotFill,
-} from "react-icons/bs";
+import { BsCashCoin, BsBasket2Fill, BsTagsFill } from "react-icons/bs";
 import DashboardInfoCard from "@/app/ui/section/admin/dashboard/DashboardInfoCard";
 import BarChart from "@/app/ui/charts/BarChart";
 import DonutChart from "@/app/ui/charts/DonutChart";
@@ -20,7 +16,7 @@ export default async function AdminDashboardPage() {
           </p>
           <div className="flex flex-col gap-6 md:flex-row md:justify-center md:gap-10">
             <DashboardInfoCard label="Total Sales" value="$99000" color="blue">
-              <BsCurrencyExchange />
+              <BsCashCoin />
             </DashboardInfoCard>
 
             <DashboardInfoCard label="Total Orders" value="340" color="green">
@@ -28,7 +24,7 @@ export default async function AdminDashboardPage() {
             </DashboardInfoCard>
 
             <DashboardInfoCard label="Total Products" value="42" color="orange">
-              <BsCupHotFill />
+              <BsTagsFill />
             </DashboardInfoCard>
           </div>
         </div>

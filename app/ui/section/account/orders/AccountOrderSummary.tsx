@@ -14,7 +14,7 @@ export default function AccountOrderSummary({
 
   return (
     <div
-      className={`inline-flex min-w-96 grow flex-col items-center justify-center gap-6 rounded bg-white p-4 ${className}`}
+      className={`inline-flex grow flex-col items-center justify-center gap-6 rounded bg-white p-4 sm:min-w-96 ${className}`}
     >
       <h2 className="font-sans text-xl font-medium text-slate-900">Summary</h2>
       <div className="flex flex-col gap-4">

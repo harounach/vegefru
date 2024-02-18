@@ -41,7 +41,7 @@ export default function ReviewForm({
         placeholder="Comment"
         error={state?.errors?.comment?.join(", ")}
       />
-      <Button label="Submit" type="submit" custom="write-review__btn" />
+      <Button label="Submit" type="submit" />
       {state.message && (
         <p className="text-base font-normal text-red-500">{state.message}</p>
       )}
