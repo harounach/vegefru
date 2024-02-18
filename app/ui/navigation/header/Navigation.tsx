@@ -9,6 +9,7 @@ import LinkButton from "@/app/ui/actionables/buttons/LinkButton";
 import MenuButton from "./MenuButton";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
+import CartButton from "../../actionables/buttons/CartButton";
 
 interface NavigationProps {
   isLoggedIn: boolean;
@@ -55,7 +56,8 @@ export default function Navigation({ isLoggedIn, isAdmin }: NavigationProps) {
             </li>
             <li>
               {/* <Link href="/cart">Cart</Link> */}
-              <NavLink url="/cart" label="Cart" />
+              {/* <NavLink url="/cart" label="Cart" /> */}
+              <CartButton />
             </li>
             <li>
               <AuthButton isLoggedIn={isLoggedIn} />
