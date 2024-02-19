@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { BsFillCartFill } from "react-icons/bs";
-// import { useCartStore } from "@/app/lib/store/cart";
+import { useCartStore } from "@/app/lib/store/cart";
 
 export default function CartButton() {
-  // const { items } = useCartStore();
-  const items = [12, 12];
+  const { items } = useCartStore();
+  // const items = [12, 12];
 
   return (
     <div className="relative inline-flex cursor-pointer">

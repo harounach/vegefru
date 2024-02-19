@@ -1,14 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import Navigation from "./Navigation";
-// import { auth } from "@/auth";
+import { auth } from "@/auth";
 
 export default async function Header() {
-  // const session = await auth();
-  // const isLoggedIn = !!session?.user;
-  // const isAdmin = session?.user?.role === "admin";
-  const isLoggedIn = true;
-  const isAdmin = true;
+  const session = await auth();
+  const isLoggedIn = !!session?.user;
+  const isAdmin = session?.user?.role === "admin";
+
+  // const isLoggedIn = true;
+  // const isAdmin = true;
 
   return (
     <header className="relative flex items-center justify-center py-2">

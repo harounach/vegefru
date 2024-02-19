@@ -1,8 +1,8 @@
-// "use client";
+"use client";
 
-// import { useCartStore } from "@/app/lib/store/cart";
+import { useCartStore } from "@/app/lib/store/cart";
 import { getSummary } from "@/app/lib/utils/summary";
-import { cartItemsData as items } from "@/app/lib/data";
+// import { cartItemsData as items } from "@/app/lib/data";
 import LinkButton from "@/app/ui/actionables/buttons/LinkButton";
 
 interface CartSummaryProps {
@@ -10,7 +10,7 @@ interface CartSummaryProps {
 }
 
 export default function CartSummary({ className }: CartSummaryProps) {
-  // const items = useCartStore((state) => state.items);
+  const items = useCartStore((state) => state.items);
   const summary = getSummary(items);
 
   return (

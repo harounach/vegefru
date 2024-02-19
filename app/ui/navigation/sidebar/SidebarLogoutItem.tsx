@@ -13,7 +13,7 @@ export default function SidebarLogoutItem({
   className,
   children,
 }: SidebarLogoutItemProps) {
-  const classes = classNames("sidebar__logout", className);
+  const classes = classNames(className);
 
   return (
     <form

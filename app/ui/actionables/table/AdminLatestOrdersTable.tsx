@@ -11,7 +11,7 @@ export default async function AdminLatestOrdersTable({
   const orders = await fetchLatestOrders();
 
   const orderRows = orders.map((order) => {
-    return <AdminOrderTableRow key={order._id.toString()} order={order} />;
+    return <AdminOrderTableRow key={order._id} order={order} />;
   });
 
   return (

@@ -1,5 +1,5 @@
 import AccountOrderTable from "@/app/ui/actionables/table/AccountOrderTable";
-// import { auth } from "@/auth";
+import { auth } from "@/auth";
 
 export default async function AccountOrdersPage({
   searchParams,
@@ -9,8 +9,9 @@ export default async function AccountOrdersPage({
   };
 }) {
   const currentPage = Number(searchParams?.page) || 1;
-  // const session = await auth();
-  // const userId = session?.user ? session?.user._id : "";
+  const session = await auth();
+  const userId = session?.user ? session?.user._id : "";
+  // const userId = "";
 
   return (
     <>
@@ -22,7 +23,7 @@ export default async function AccountOrdersPage({
           <p className="mb-6 text-center text-base font-normal text-slate-600">
             View your order history
           </p>
-          <AccountOrderTable currentPage={currentPage} userId={""} />
+          <AccountOrderTable currentPage={currentPage} userId={userId} />
         </div>
       </section>
     </>

@@ -30,7 +30,7 @@ export default function CreateOrderButton({
 
   return (
     <form action={dispatch}>
-      <Button type="submit" label="Place Order Now" custom="summary__btn" />
+      <Button type="submit" label="Place Order Now" />
     </form>
   );
 }

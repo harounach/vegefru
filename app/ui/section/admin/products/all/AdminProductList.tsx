@@ -1,5 +1,5 @@
 import LinkButton from "@/app/ui/actionables/buttons/LinkButton";
-import AdminCoffeeCard from "./AdminCoffeeCard";
+import AdminProductCard from "./AdminProductCard";
 
 import {
   fetchFilteredProducts,
@@ -7,19 +7,19 @@ import {
 } from "@/app/lib/database/product/product.query";
 import Pagination from "@/app/ui/actionables/Pagination";
 
-interface AdminCoffeeListProps {
+interface AdminProductListProps {
   query: string;
   currentPage: number;
   category: string;
   className?: string;
 }
 
-export default async function AdminCoffeeList({
+export default async function AdminProductList({
   query,
   currentPage,
   category,
   className,
-}: AdminCoffeeListProps) {
+}: AdminProductListProps) {
   const products = await fetchFilteredProducts(query, currentPage, category);
   const totalPages = await fetchProductsPages(query, category);
 
@@ -43,12 +43,15 @@ export default async function AdminCoffeeList({
           {products.map((product) => {
             product._id = product._id.toString();
             return (
-              <AdminCoffeeCard key={product._id.toString()} product={product} />
+              <AdminProductCard
+                key={product._id.toString()}
+                product={product}
+              />
             );
           })}
         </div>
       </div>
-      <div className="bg-zinc-100 mt-4">
+      <div className="mt-4 bg-zinc-100">
         <Pagination totalPages={totalPages} />
       </div>
     </>

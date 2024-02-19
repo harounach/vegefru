@@ -1,7 +1,7 @@
 import dbConnect from "@/app/lib/database/dbConnect";
 import { ProductModel } from "@/app/lib/database/models";
 import { Product } from "@/app/lib/definitions";
-import { products } from "../../data";
+import { products } from "@/app/lib/data";
 
 // Number of items per page
 const LIMIT = 8;
@@ -11,11 +11,20 @@ const LIMIT = 8;
  */
 export async function fetchFeaturedProducts() {
   try {
-    // await dbConnect();
-    // const featuredProducts = await ProductModel.find({ isFeatured: true })
-    //   .limit(4)
-    //   .lean();
-    const featuredProducts = products.filter((p) => p.isFeatured === true);
+    await dbConnect();
+    const rawProducts = (await ProductModel.find({ isFeatured: true })
+      .limit(4)
+      .lean()) as Product[];
+
+    const featuredProducts = rawProducts.map((product) => {
+      return {
+        ...product,
+        _id: product._id.toString(),
+      };
+    });
+
+    // const featuredProducts = products.filter((p) => p.isFeatured === true);
+
     return featuredProducts as Product[];
   } catch (err) {
     console.error("Database Error:", err);
@@ -28,18 +37,18 @@ export async function fetchFeaturedProducts() {
  */
 export async function fetchSingleProduct(id: string) {
   try {
-    // await dbConnect();
-    // const singleProduct = (await ProductModel.findById(id).lean()) as Product;
+    await dbConnect();
+    const singleProduct = (await ProductModel.findById(id).lean()) as Product;
 
-    // if (!singleProduct) {
-    //   return null;
-    // }
+    if (!singleProduct) {
+      return null;
+    }
 
-    // const product = {
-    //   ...singleProduct,
-    //   _id: singleProduct._id.toString(),
-    // };
-    const product = products.find((p) => p._id === id);
+    const product = {
+      ...singleProduct,
+      _id: singleProduct._id.toString(),
+    };
+    // const product = products.find((p) => p._id === id);
 
     return product as Product;
   } catch (err) {
@@ -56,23 +65,40 @@ export async function fetchFilteredProducts(
   category: string,
 ) {
   try {
-    // await dbConnect();
-    // const searchFilter = query
-    //   ? {
-    //       title: {
-    //         $regex: query,
-    //         $options: "i",
-    //       },
-    //     }
-    //   : {};
+    await dbConnect();
 
-    // const products = await ProductModel.find(searchFilter)
-    //   .sort({ createdAt: 1 })
-    //   .limit(LIMIT * 1)
-    //   .skip((currentPage - 1) * LIMIT)
-    //   .lean()
-    //   .exec();
-    const allProducts = products.slice(0, 8);
+    let filter: {
+      title?: { $regex: string; $options: string };
+      category?: string;
+    } = {};
+
+    if (query) {
+      filter["title"] = {
+        $regex: query,
+        $options: "i",
+      };
+    }
+
+    if (category) {
+      filter["category"] = category;
+    }
+
+    const rawProducts = (await ProductModel.find(filter)
+      .sort({ createdAt: 1 })
+      .limit(LIMIT * 1)
+      .skip((currentPage - 1) * LIMIT)
+      .lean()
+      .exec()) as Product[];
+
+    const allProducts = rawProducts.map((product) => {
+      return {
+        ...product,
+        _id: product._id.toString(),
+      };
+    });
+
+    // const allProducts = products.slice(0, 8);
+
     return allProducts as Product[];
   } catch (err) {
     console.error("Database Error:", err);
@@ -85,19 +111,27 @@ export async function fetchFilteredProducts(
  * */
 export async function fetchProductsPages(query: string, category: string) {
   try {
-    // await dbConnect();
-    // const searchFilter = query
-    //   ? {
-    //       title: {
-    //         $regex: query,
-    //         $options: "i",
-    //       },
-    //     }
-    //   : {};
+    await dbConnect();
 
-    // const count = await ProductModel.countDocuments(searchFilter);
-    // const totalPages = Math.ceil(count / LIMIT);
-    const totalPages = Math.ceil(products.length / LIMIT);
+    let filter: {
+      title?: { $regex: string; $options: string };
+      category?: string;
+    } = {};
+
+    if (query) {
+      filter["title"] = {
+        $regex: query,
+        $options: "i",
+      };
+    }
+
+    if (category) {
+      filter["category"] = category;
+    }
+
+    const count = await ProductModel.countDocuments(filter);
+    const totalPages = Math.ceil(count / LIMIT);
+    // const totalPages = Math.ceil(products.length / LIMIT);
 
     return totalPages as number;
   } catch (err) {

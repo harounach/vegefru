@@ -43,7 +43,6 @@ export default function CartCard({ item, className }: CartCardProps) {
               onClick={() => decrementQty(item.product._id)}
             >
               <span className="sr-only">Decrement Quantity button</span>
-
               <BsDash className="h-3 w-3" aria-hidden="true" />
             </button>
             <div>

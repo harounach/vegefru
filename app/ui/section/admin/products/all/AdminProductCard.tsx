@@ -1,19 +1,19 @@
 import Image from "next/image";
 import { BsEye, BsPencilFill } from "react-icons/bs";
-import DeleteCoffeeButton from "./DeleteCoffeeButton";
+import DeleteProductButton from "./DeleteProductButton";
 import FeaturedButton from "./FeaturedButton";
 import IconLinkButton from "@/app/ui/actionables/buttons/IconLinkButton";
 import { Product } from "@/app/lib/definitions";
 
-interface AdminCoffeeCardProps {
+interface AdminProductCardProps {
   product: Product;
   className?: string;
 }
 
-export default function AdminCoffeeCard({
+export default function AdminProductCard({
   product,
   className,
-}: AdminCoffeeCardProps) {
+}: AdminProductCardProps) {
   return (
     <div
       className={`flex items-center gap-6 bg-white px-0 py-4 no-underline ${className}`}
@@ -33,9 +33,9 @@ export default function AdminCoffeeCard({
           <span className="text-lg font-medium text-amber-600">{`$${product.price}`}</span>
         </div>
         <div className="flex items-center justify-end gap-2">
-          <DeleteCoffeeButton id={product._id} />
-          <ViewCoffeeButton id={product._id} />
-          <EditCoffeeButton id={product._id} />
+          <DeleteProductButton id={product._id} />
+          <ViewProductButton id={product._id} />
+          <EditProductButton id={product._id} />
           <FeaturedButton
             productId={product._id}
             isFeatured={product.isFeatured}
@@ -46,11 +46,11 @@ export default function AdminCoffeeCard({
   );
 }
 
-function EditCoffeeButton({ id }: { id: string }) {
+function EditProductButton({ id }: { id: string }) {
   return (
     <IconLinkButton
       url={`/admin/products/${id}/edit`}
-      title="Edit Coffee"
+      title="Edit Product"
       className="bg-slate-100 text-slate-900 transition hover:bg-slate-200"
     >
       <BsPencilFill />
@@ -58,11 +58,11 @@ function EditCoffeeButton({ id }: { id: string }) {
   );
 }
 
-function ViewCoffeeButton({ id }: { id: string }) {
+function ViewProductButton({ id }: { id: string }) {
   return (
     <IconLinkButton
       url={`/admin/products/${id}`}
-      title="View Coffee"
+      title="View Product"
       className="bg-slate-100 text-slate-900 transition hover:bg-slate-200"
     >
       <BsEye />

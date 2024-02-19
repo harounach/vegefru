@@ -11,7 +11,7 @@ export default function PayButton({ orderId }: { orderId: string }) {
 
   return (
     <form action={dispatch}>
-      <Button type="submit" label="Mark As Paid" custom="summary__btn" />
+      <Button type="submit" label="Mark As Paid" />
     </form>
   );
 }

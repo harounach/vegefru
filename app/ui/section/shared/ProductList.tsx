@@ -5,14 +5,14 @@ interface ProductListProps {
   query: string;
   currentPage: number;
   category: string;
-  custom?: string;
+  className?: string;
 }
 
 export default async function ProductList({
   query,
   currentPage,
   category,
-  custom,
+  className,
 }: ProductListProps) {
   const products = await fetchFilteredProducts(query, currentPage, category);
   return (

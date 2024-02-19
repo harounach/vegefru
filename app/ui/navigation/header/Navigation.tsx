@@ -47,16 +47,12 @@ export default function Navigation({ isLoggedIn, isAdmin }: NavigationProps) {
               </div>
             </li>
             <li>
-              {/* <Link href="/">Home</Link> */}
               <NavLink url="/" label="Home" />
             </li>
             <li>
-              {/* <Link href="/products">Shop</Link> */}
               <NavLink url="/products" label="Shop" />
             </li>
             <li>
-              {/* <Link href="/cart">Cart</Link> */}
-              {/* <NavLink url="/cart" label="Cart" /> */}
               <CartButton />
             </li>
             <li>

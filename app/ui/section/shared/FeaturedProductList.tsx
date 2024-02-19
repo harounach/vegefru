@@ -2,11 +2,11 @@ import { fetchFeaturedProducts } from "@/app/lib/database/product/product.query"
 import ProductCard from "./ProductCard";
 
 interface FeaturedProductListProps {
-  custom?: string;
+  className?: string;
 }
 
 export default async function FeaturedProductList({
-  custom,
+  className,
 }: FeaturedProductListProps) {
   const featuredProducts = await fetchFeaturedProducts();
 

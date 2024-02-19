@@ -1,13 +1,13 @@
-// "use client";
+"use client";
 
 import CreateOrderButton from "./CreateOrderButton";
 import { getSummary } from "@/app/lib/utils/summary";
-// import { useCartStore } from "@/app/lib/store/cart";
-import {
-  cartItemsData as items,
-  shippingData as shipping,
-  paymentData as payment,
-} from "@/app/lib/data";
+import { useCartStore } from "@/app/lib/store/cart";
+// import {
+//   cartItemsData as items,
+//   shippingData as shipping,
+//   paymentData as payment,
+// } from "@/app/lib/data";
 
 interface PlaceOrderSummaryProps {
   userId: string;
@@ -18,7 +18,7 @@ export default function PlaceOrderSummary({
   userId,
   className,
 }: PlaceOrderSummaryProps) {
-  // const { shipping, payment, items } = useCartStore();
+  const { shipping, payment, items } = useCartStore();
   const summary = getSummary(items);
 
   return (

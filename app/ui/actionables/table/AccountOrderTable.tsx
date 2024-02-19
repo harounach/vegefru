@@ -19,7 +19,7 @@ export default async function AccountOrderTable({
   );
 
   const orderRows = orders.map((order) => {
-    return <AccountOrderTableRow key={order._id.toString()} order={order} />;
+    return <AccountOrderTableRow key={order._id} order={order} />;
   });
 
   return (

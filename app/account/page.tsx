@@ -1,9 +1,10 @@
 import ProfileManageAccountForm from "@/app/ui/section/account/profile/ProfileManageAccountForm";
-// import { auth } from "@/auth";
+import { auth } from "@/auth";
 
 export default async function AccountProfilePage() {
-  // const session = await auth();
-  // const userId = session?.user ? session?.user._id : "";
+  const session = await auth();
+  const userId = session?.user ? session?.user._id : "";
+  // const userId = "";
 
   return (
     <>
@@ -17,7 +18,7 @@ export default async function AccountProfilePage() {
           </p>
 
           <div className="mx-auto max-w-sm rounded bg-white">
-            <ProfileManageAccountForm userId={""} />
+            <ProfileManageAccountForm userId={userId} />
           </div>
         </div>
       </section>

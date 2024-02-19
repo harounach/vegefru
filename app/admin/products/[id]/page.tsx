@@ -26,7 +26,7 @@ export default async function ProductDetailPage({
             {product.title}
           </h1>
           <p className="mb-6 text-center text-base font-normal text-slate-600">
-            View coffee details
+            View product details
           </p>
 
           <div className="mx-auto max-w-lg">

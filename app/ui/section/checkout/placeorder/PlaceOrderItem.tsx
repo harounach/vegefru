@@ -11,8 +11,10 @@ export default function PlaceOrderItem({
   cartItem,
   className,
 }: PlaceOrderItemProps) {
+  const classes = classNames(className);
+
   return (
-    <div className={`flex items-center gap-6 ${className}`}>
+    <div className={`flex items-center gap-6 ${classes}`}>
       <Image
         src={cartItem.product.image}
         width={100}

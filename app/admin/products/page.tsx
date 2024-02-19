@@ -1,4 +1,4 @@
-import AdminCoffeeList from "@/app/ui/section/admin/products/all/AdminCoffeeList";
+import AdminProductList from "@/app/ui/section/admin/products/all/AdminProductList";
 
 export default async function AdminProductListPage({
   searchParams,
@@ -23,7 +23,7 @@ export default async function AdminProductListPage({
           </p>
 
           <div className="mx-auto max-w-lg">
-            <AdminCoffeeList
+            <AdminProductList
               query={query}
               currentPage={currentPage}
               category={category}

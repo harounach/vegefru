@@ -2,11 +2,12 @@ import PlaceOrderShippingCard from "@/app/ui/section/checkout/placeorder/PlaceOr
 import PlaceOrderPaymentCard from "@/app/ui/section/checkout/placeorder/PlaceOrderPaymentCard";
 import PlaceOrderCartItemsList from "@/app/ui/section/checkout/placeorder/PlaceOrderCartItemsList";
 import PlaceOrderSummary from "@/app/ui/section/checkout/placeorder/PlaceOrderSummary";
-// import { auth } from "@/auth";
+import { auth } from "@/auth";
 
 export default async function Page() {
-  // const session = await auth();
-  // const userId = session?.user ? session?.user._id : "";
+  const session = await auth();
+  const userId = session?.user ? session?.user._id : "";
+  // const userId = "";
 
   return (
     <main className="page" id="content">
@@ -18,7 +19,6 @@ export default async function Page() {
           <p className="mb-6 text-center text-base font-normal text-slate-600">
             Review your info before placing your order
           </p>
-          <p className="display">Hello</p>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <div className="flex flex-col gap-4">
               {/* Shipping */}
@@ -32,7 +32,7 @@ export default async function Page() {
             </div>
             {/* Summary */}
             <div>
-              <PlaceOrderSummary userId={""} />
+              <PlaceOrderSummary userId={userId} />
             </div>
           </div>
         </div>

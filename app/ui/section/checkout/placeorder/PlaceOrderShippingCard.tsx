@@ -1,9 +1,9 @@
-// "use client";
+"use client";
 
 import { BsPencilFill } from "react-icons/bs";
 import IconLinkButton from "@/app/ui/actionables/buttons/IconLinkButton";
-import { shippingData as shipping } from "@/app/lib/data";
-// import { useCartStore } from "@/app/lib/store/cart";
+// import { shippingData as shipping } from "@/app/lib/data";
+import { useCartStore } from "@/app/lib/store/cart";
 
 interface PlaceOrderShippingCardProps {
   className?: string;
@@ -12,7 +12,7 @@ interface PlaceOrderShippingCardProps {
 export default function PlaceOrderShippingCard({
   className,
 }: PlaceOrderShippingCardProps) {
-  // const shipping = useCartStore((state) => state.shipping);
+  const shipping = useCartStore((state) => state.shipping);
 
   return (
     <div className={`flex flex-col gap-4 rounded bg-white p-4 ${className}`}>
@@ -20,7 +20,10 @@ export default function PlaceOrderShippingCard({
         <h3 className="font-sans text-xl font-medium text-slate-900">
           Shipping
         </h3>
-        <IconLinkButton url="/checkout/shipping" custom="content-card__btn">
+        <IconLinkButton
+          url="/checkout/shipping"
+          className="bg-blue-50 text-blue-600 transition hover:bg-blue-100"
+        >
           <BsPencilFill />
         </IconLinkButton>
       </div>

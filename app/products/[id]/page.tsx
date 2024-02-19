@@ -1,11 +1,10 @@
-import { users } from "@/app/lib/data";
 import { fetchSingleProduct } from "@/app/lib/database/product/product.query";
 import ReviewList from "@/app/ui/section/products/ReviewList";
 import WriteReview from "@/app/ui/section/products/WriteReview";
 import Rating from "@/app/ui/misc/Rating";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import CoffeeActions from "@/app/ui/section/products/CoffeeActions";
+import ProductActions from "@/app/ui/section/products/ProductActions";
 
 export default async function SingleProductPage({
   params,
@@ -60,7 +59,7 @@ export default async function SingleProductPage({
               <p className="text-base font-normal text-slate-600">
                 {product.desc}
               </p>
-              <CoffeeActions product={product} />
+              <ProductActions product={product} />
             </div>
           </div>
         </div>
@@ -70,11 +69,7 @@ export default async function SingleProductPage({
           {/* Review grid */}
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             {/* WriteReview */}
-            <WriteReview
-              name={users[1].name}
-              email={users[1].email}
-              productId={product._id.toString()}
-            />
+            <WriteReview productId={product._id.toString()} />
 
             {/* ReviewList */}
             <ReviewList productId={product._id.toString()} />

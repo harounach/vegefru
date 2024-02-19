@@ -11,7 +11,7 @@ export default function DeliverButton({ orderId }: { orderId: string }) {
 
   return (
     <form action={dispatch}>
-      <Button type="submit" label="Mark As Delivered" custom="summary__btn" />
+      <Button type="submit" label="Mark As Delivered" />
     </form>
   );
 }

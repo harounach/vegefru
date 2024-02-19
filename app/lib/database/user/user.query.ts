@@ -1,5 +1,5 @@
 import dbConnect from "@/app/lib/database/dbConnect";
-import { users } from "@/app/lib/data";
+// import { users } from "@/app/lib/data";
 import { User } from "@/app/lib/definitions";
 import { UserModel } from "@/app/lib/database/models";
 
@@ -22,30 +22,31 @@ export async function getUserByEmail(email: string) {
  */
 export async function fetchFilteredUsers(query: string, currentPage: number) {
   try {
-    // await dbConnect();
-    // const searchFilter = query
-    //   ? {
-    //       name: {
-    //         $regex: query,
-    //         $options: "i",
-    //       },
-    //     }
-    //   : {};
+    await dbConnect();
+    const filter = query
+      ? {
+          name: {
+            $regex: query,
+            $options: "i",
+          },
+        }
+      : {};
 
-    // const rawUsers = await UserModel.find(searchFilter)
-    //   .sort({ createdAt: 1 })
-    //   .limit(LIMIT * 1)
-    //   .skip((currentPage - 1) * LIMIT)
-    //   .select("-passwordHash")
-    //   .lean()
-    //   .exec();
+    const rawUsers = (await UserModel.find(filter)
+      .sort({ createdAt: 1 })
+      .limit(LIMIT * 1)
+      .skip((currentPage - 1) * LIMIT)
+      .select("-passwordHash")
+      .lean()
+      .exec()) as User[];
 
-    // const users = rawUsers.map((user) => {
-    //   return {
-    //     ...user,
-    //     _id: user?._id?.toString(),
-    //   };
-    // });
+    const users = rawUsers.map((user) => {
+      return {
+        ...user,
+        _id: user._id.toString(),
+        createdAt: user.createdAt.toString(),
+      };
+    });
 
     return users as User[];
   } catch (err) {
@@ -59,20 +60,20 @@ export async function fetchFilteredUsers(query: string, currentPage: number) {
  * */
 export async function fetchUsersPages(query: string) {
   try {
-    // await dbConnect();
-    // const searchFilter = query
-    //   ? {
-    //       name: {
-    //         $regex: query,
-    //         $options: "i",
-    //       },
-    //     }
-    //   : {};
+    await dbConnect();
+    const filter = query
+      ? {
+          name: {
+            $regex: query,
+            $options: "i",
+          },
+        }
+      : {};
 
-    // const count = await UserModel.countDocuments(searchFilter);
-    // const totalPages = Math.ceil(count / LIMIT);
+    const count = await UserModel.countDocuments(filter);
+    const totalPages = Math.ceil(count / LIMIT);
 
-    const totalPages = Math.ceil(users.length / LIMIT);
+    // const totalPages = Math.ceil(users.length / LIMIT);
 
     return totalPages as number;
   } catch (err) {

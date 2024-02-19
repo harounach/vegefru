@@ -1,9 +1,9 @@
-// "use client";
+"use client";
 
 import { BsPencilFill } from "react-icons/bs";
 import IconLinkButton from "@/app/ui/actionables/buttons/IconLinkButton";
-import { paymentData as payment } from "@/app/lib/data";
-// import { useCartStore } from "@/app/lib/store/cart";
+// import { paymentData as payment } from "@/app/lib/data";
+import { useCartStore } from "@/app/lib/store/cart";
 
 interface PlaceOrderPaymentCardProps {
   className?: string;
@@ -12,7 +12,7 @@ interface PlaceOrderPaymentCardProps {
 export default function PlaceOrderPaymentCard({
   className,
 }: PlaceOrderPaymentCardProps) {
-  // const payment = useCartStore((state) => state.payment);
+  const payment = useCartStore((state) => state.payment);
 
   return (
     <div className={`flex flex-col gap-4 rounded bg-white p-4 ${className}`}>
@@ -20,7 +20,10 @@ export default function PlaceOrderPaymentCard({
         <h3 className="font-sans text-xl font-medium text-slate-900">
           Payment
         </h3>
-        <IconLinkButton url="/checkout/payment" custom="content-card__btn">
+        <IconLinkButton
+          url="/checkout/payment"
+          className="bg-blue-50 text-blue-600 transition hover:bg-blue-100"
+        >
           <BsPencilFill />
         </IconLinkButton>
       </div>

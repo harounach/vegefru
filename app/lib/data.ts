@@ -54,7 +54,7 @@ export const products: Array<Product> = [
   // 02
   {
     _id: "apricot",
-    title: "apricot",
+    title: "Apricot",
     desc: "Donut lemon drops apricot pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/apricot.jpg",
@@ -68,12 +68,12 @@ export const products: Array<Product> = [
   // 03
   {
     _id: "artichoke",
-    title: "artichoke",
+    title: "Artichoke",
     desc: "Donut lemon drops artichoke pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/artichoke.jpg",
     slug: "artichoke",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -82,12 +82,12 @@ export const products: Array<Product> = [
   // 04
   {
     _id: "asparagus",
-    title: "asparagus",
+    title: "Asparagus",
     desc: "Donut lemon drops asparagus pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/asparagus.jpg",
     slug: "asparagus",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -96,7 +96,7 @@ export const products: Array<Product> = [
   // 05
   {
     _id: "banana",
-    title: "banana",
+    title: "Banana",
     desc: "Donut lemon drops banana pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/banana.jpg",
@@ -110,12 +110,12 @@ export const products: Array<Product> = [
   // 06
   {
     _id: "beet",
-    title: "beet",
+    title: "Beet",
     desc: "Donut lemon drops beet pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/beet.jpg",
     slug: "beet",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -124,7 +124,7 @@ export const products: Array<Product> = [
   // 07
   {
     _id: "blackberry",
-    title: "blackberry",
+    title: "Blackberry",
     desc: "Donut lemon drops blackberry pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/blackberry.jpg",
@@ -138,7 +138,7 @@ export const products: Array<Product> = [
   // 08
   {
     _id: "blueberry",
-    title: "blueberry",
+    title: "Blueberry",
     desc: "Donut lemon drops blueberry pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/blueberry.jpg",
@@ -152,12 +152,12 @@ export const products: Array<Product> = [
   // 09
   {
     _id: "bok-choy",
-    title: "bok-choy",
+    title: "Bok-choy",
     desc: "Donut lemon drops bok-choy pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/bok-choy.jpg",
     slug: "bok-choy",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -166,12 +166,12 @@ export const products: Array<Product> = [
   // 10
   {
     _id: "broccoli",
-    title: "broccoli",
+    title: "Broccoli",
     desc: "Donut lemon drops broccoli pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/broccoli.jpg",
     slug: "broccoli",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -180,12 +180,12 @@ export const products: Array<Product> = [
   // 11
   {
     _id: "cabbage",
-    title: "cabbage",
+    title: "Cabbage",
     desc: "Donut lemon drops cabbage pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/cabbage.jpg",
     slug: "cabbage",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: true,
@@ -194,12 +194,12 @@ export const products: Array<Product> = [
   // 12
   {
     _id: "carrot",
-    title: "carrot",
+    title: "Carrot",
     desc: "Donut lemon drops carrot pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/carrot.jpg",
     slug: "carrot",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -208,12 +208,12 @@ export const products: Array<Product> = [
   // 13
   {
     _id: "cauliflower",
-    title: "cauliflower",
+    title: "Cauliflower",
     desc: "Donut lemon drops cauliflower pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/cauliflower.jpg",
     slug: "cauliflower",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -222,12 +222,12 @@ export const products: Array<Product> = [
   // 14
   {
     _id: "celery",
-    title: "celery",
+    title: "Celery",
     desc: "Donut lemon drops celery pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/celery.jpg",
     slug: "celery",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -236,7 +236,7 @@ export const products: Array<Product> = [
   // 15
   {
     _id: "cherries",
-    title: "cherries",
+    title: "Cherries",
     desc: "Donut lemon drops cherries pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/cherries.jpg",
@@ -250,12 +250,12 @@ export const products: Array<Product> = [
   // 16
   {
     _id: "chili-pepper",
-    title: "chili-pepper",
+    title: "Chili-pepper",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/chili-pepper.jpg",
     slug: "chili-pepper",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -264,7 +264,7 @@ export const products: Array<Product> = [
   // 17
   {
     _id: "coconut",
-    title: "coconut",
+    title: "Coconut",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/coconut.jpg",
@@ -278,12 +278,12 @@ export const products: Array<Product> = [
   // 18
   {
     _id: "corn",
-    title: "corn",
+    title: "Corn",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/corn.jpg",
     slug: "corn",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -292,12 +292,12 @@ export const products: Array<Product> = [
   // 19
   {
     _id: "cucumber",
-    title: "cucumber",
+    title: "Cucumber",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/cucumber.jpg",
     slug: "cucumber",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -306,7 +306,7 @@ export const products: Array<Product> = [
   // 20
   {
     _id: "dates",
-    title: "dates",
+    title: "Dates",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/dates.jpg",
@@ -320,12 +320,12 @@ export const products: Array<Product> = [
   // 21
   {
     _id: "eggplant",
-    title: "eggplant",
+    title: "Eggplant",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/eggplant.jpg",
     slug: "eggplant",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -334,7 +334,7 @@ export const products: Array<Product> = [
   // 22
   {
     _id: "fig",
-    title: "fig",
+    title: "Fig",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/fig.jpg",
@@ -348,12 +348,12 @@ export const products: Array<Product> = [
   // 23
   {
     _id: "garlic",
-    title: "garlic",
+    title: "Garlic",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/garlic.jpg",
     slug: "garlic",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -362,7 +362,7 @@ export const products: Array<Product> = [
   // 24
   {
     _id: "grapefruit",
-    title: "grapefruit",
+    title: "Grapefruit",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/grapefruit.jpg",
@@ -376,7 +376,7 @@ export const products: Array<Product> = [
   // 25
   {
     _id: "grapes",
-    title: "grapes",
+    title: "Grapes",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/grapes.jpg",
@@ -390,12 +390,12 @@ export const products: Array<Product> = [
   // 26
   {
     _id: "green-bean",
-    title: "green-bean",
+    title: "Green-bean",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/green-bean.jpg",
     slug: "green-bean",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -404,12 +404,12 @@ export const products: Array<Product> = [
   // 27
   {
     _id: "green-pepper",
-    title: "green-pepper",
+    title: "Green-pepper",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/green-pepper.jpg",
     slug: "green-pepper",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -418,7 +418,7 @@ export const products: Array<Product> = [
   // 28
   {
     _id: "kiwi",
-    title: "kiwi",
+    title: "Kiwi",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/kiwi.jpg",
@@ -432,7 +432,7 @@ export const products: Array<Product> = [
   // 29
   {
     _id: "lemon",
-    title: "lemon",
+    title: "Lemon",
     desc: "Donut lemon drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/lemon.jpg",
@@ -446,12 +446,12 @@ export const products: Array<Product> = [
   // 30
   {
     _id: "lettuce",
-    title: "lettuce",
+    title: "Lettuce",
     desc: "Donut lettuce drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/lettuce.jpg",
     slug: "lettuce",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -460,7 +460,7 @@ export const products: Array<Product> = [
   // 31
   {
     _id: "lime",
-    title: "lime",
+    title: "Lime",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/lime.jpg",
@@ -474,7 +474,7 @@ export const products: Array<Product> = [
   // 32
   {
     _id: "mango",
-    title: "mango",
+    title: "Mango",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/mango.jpg",
@@ -488,7 +488,7 @@ export const products: Array<Product> = [
   // 33
   {
     _id: "melon",
-    title: "melon",
+    title: "Melon",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/melon.jpg",
@@ -502,12 +502,12 @@ export const products: Array<Product> = [
   // 34
   {
     _id: "mushroom",
-    title: "mushroom",
+    title: "Mushroom",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/mushroom.jpg",
     slug: "mushroom",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -516,12 +516,12 @@ export const products: Array<Product> = [
   // 35
   {
     _id: "onion",
-    title: "onion",
+    title: "Onion",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/onion.jpg",
     slug: "onion",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -530,12 +530,12 @@ export const products: Array<Product> = [
   // 36
   {
     _id: "orange",
-    title: "orange",
+    title: "Orange",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/orange.jpg",
     slug: "orange",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -544,7 +544,7 @@ export const products: Array<Product> = [
   // 37
   {
     _id: "papaya",
-    title: "papaya",
+    title: "Papaya",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/papaya.jpg",
@@ -558,12 +558,12 @@ export const products: Array<Product> = [
   // 38
   {
     _id: "parsley",
-    title: "parsley",
+    title: "Parsley",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/parsley.jpg",
     slug: "parsley",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -572,7 +572,7 @@ export const products: Array<Product> = [
   // 39
   {
     _id: "peach",
-    title: "peach",
+    title: "Peach",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/peach.jpg",
@@ -586,12 +586,12 @@ export const products: Array<Product> = [
   // 40
   {
     _id: "pear",
-    title: "pear",
+    title: "Pear",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/pear.jpg",
     slug: "pear",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -600,12 +600,12 @@ export const products: Array<Product> = [
   // 41
   {
     _id: "peas",
-    title: "peas",
+    title: "Peas",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/peas.jpg",
     slug: "peas",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -614,7 +614,7 @@ export const products: Array<Product> = [
   // 42
   {
     _id: "pineapple",
-    title: "pineapple",
+    title: "Pineapple",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/pineapple.jpg",
@@ -628,7 +628,7 @@ export const products: Array<Product> = [
   // 43
   {
     _id: "plum",
-    title: "plum",
+    title: "Plum",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/plum.jpg",
@@ -642,12 +642,12 @@ export const products: Array<Product> = [
   // 44
   {
     _id: "potato",
-    title: "potato",
+    title: "Potato",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/potato.jpg",
     slug: "potato",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -656,7 +656,7 @@ export const products: Array<Product> = [
   // 45
   {
     _id: "prunes",
-    title: "prunes",
+    title: "Prunes",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/prunes.jpg",
@@ -670,12 +670,12 @@ export const products: Array<Product> = [
   // 46
   {
     _id: "radish",
-    title: "radish",
+    title: "Radish",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/radish.jpg",
     slug: "radish",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -684,7 +684,7 @@ export const products: Array<Product> = [
   // 47
   {
     _id: "raisins",
-    title: "raisins",
+    title: "Raisins",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/raisins.jpg",
@@ -698,7 +698,7 @@ export const products: Array<Product> = [
   // 48
   {
     _id: "raspberry",
-    title: "raspberry",
+    title: "Raspberry",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/raspberry.jpg",
@@ -712,12 +712,12 @@ export const products: Array<Product> = [
   // 49
   {
     _id: "scallion",
-    title: "scallion",
+    title: "Scallion",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/scallion.jpg",
     slug: "scallion",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -726,12 +726,12 @@ export const products: Array<Product> = [
   // 50
   {
     _id: "spinach",
-    title: "spinach",
+    title: "Spinach",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/spinach.jpg",
     slug: "spinach",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -740,12 +740,12 @@ export const products: Array<Product> = [
   // 51
   {
     _id: "squash",
-    title: "squash",
+    title: "Squash",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/squash.jpg",
     slug: "squash",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -754,7 +754,7 @@ export const products: Array<Product> = [
   // 52
   {
     _id: "strawberry",
-    title: "strawberry",
+    title: "Strawberry",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/strawberry.jpg",
@@ -768,12 +768,12 @@ export const products: Array<Product> = [
   // 53
   {
     _id: "sweet-potato",
-    title: "sweet-potato",
+    title: "Sweet-potato",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/sweet-potato.jpg",
     slug: "sweet-potato",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -782,7 +782,7 @@ export const products: Array<Product> = [
   // 54
   {
     _id: "tangerine",
-    title: "tangerine",
+    title: "Tangerine",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/tangerine.jpg",
@@ -796,12 +796,12 @@ export const products: Array<Product> = [
   // 55
   {
     _id: "tomato",
-    title: "tomato",
+    title: "Tomato",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/tomato.jpg",
     slug: "tomato",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: true,
@@ -810,12 +810,12 @@ export const products: Array<Product> = [
   // 56
   {
     _id: "turnip",
-    title: "turnip",
+    title: "Turnip",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/turnip.jpg",
     slug: "turnip",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
@@ -824,7 +824,7 @@ export const products: Array<Product> = [
   // 57
   {
     _id: "watermelon",
-    title: "watermelon",
+    title: "Watermelon",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/watermelon.jpg",
@@ -838,12 +838,12 @@ export const products: Array<Product> = [
   // 58
   {
     _id: "zuchini",
-    title: "zuchini",
+    title: "Zuchini",
     desc: "Donut lime drops apple pie fruitcake bear claw tiramisu gummies jelly beans jelly-o. Ice cream carrot cake cotton candy cheesecake sugar plum tootsie roll candy canes. Candy canes dessert toffee icing jelly-o.",
     price: 3.5,
     image: "/images/zuchini.jpg",
     slug: "zuchini",
-    category: "fruits",
+    category: "vegetables",
     rating: 0,
     numReviews: 0,
     isFeatured: false,
